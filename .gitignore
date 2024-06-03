@@ -1,2 +1,4 @@
-.\Scripts
-.\lib
+Scripts\
+Lib\
+**/temp/
+*.log

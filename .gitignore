@@ -1,4 +1,5 @@
-Scripts\
-Lib\
+Scripts/
+Lib/
 **/temp/
 *.log
+frontend/node_modules

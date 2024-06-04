@@ -5,6 +5,7 @@ import DropdownSwitch from "../components/DropdownSwitch";
 import CardChart from "../components/CardChart";
 import {CardChartProps} from "../models/CardChartProps";
 import { getCardNazionale } from "../data/CardNazionale";
+import CardChartWithTwoTables from "../components/CardChartWithTwoTables"
 
 export default function Nazionale() {
     const arrayString = ["Stato generale cantieri","Copertura","Futuro dei cantieri","Fwa vs Fibra"];
@@ -51,7 +52,8 @@ export default function Nazionale() {
                     />
                 )}
 
-                <CardChart cardChartProps={cardChartProps} />
+                {cardChartProps.title !== "Andamento della fibra contro quello del FWA" && <CardChart cardChartProps={cardChartProps}/>}
+                {cardChartProps.title === "Andamento della fibra contro quello del FWA" &&<CardChartWithTwoTables cardChartProps= {cardChartProps}/> }
         </>
     )
 }   

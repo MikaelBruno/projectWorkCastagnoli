@@ -6,9 +6,23 @@
         padding-top: 2px;
         padding-bottom: 2px;
         width: 100%;
-        border-collapse: collapse;
+        border-spacing: 0px;
         text-align: left;
         font-size: 16px;
+        thead th {
+            border-bottom: 1px solid white; // Aggiunge una riga bianca sotto ciascuna cella dell'intestazione
+            padding-bottom: 5px;
+          }
+
+          thead th.vertical-line {
+            border-right: 1px solid white; // Aggiunge una riga verticale dopo la cella "Anno"
+            padding-right: 5px;
+          }
+  
+          tbody td.vertical-line  {
+              border-right: 1px solid white; // Aggiunge una riga verticale dopo la cella "Anno"
+              padding-right: 5px;
+            }
 
         th, td {
             padding: 4px;

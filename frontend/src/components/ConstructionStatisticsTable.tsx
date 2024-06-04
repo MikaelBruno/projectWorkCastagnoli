@@ -12,19 +12,19 @@ export default function ConstructionStatisticsTable(props: {
             <table >
                 <thead>
                     <tr>    
-                        <th></th>
+                        <th className="vertical-line"></th>
                         <th>Fwa</th>
                         <th>Fibra</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Terminati</td>
+                        <td className="vertical-line">Terminati</td>
                         <td id="number">{totals.totalFWA}</td>
                         <td id="number">{totals.totalFiber}</td>
                     </tr>
                     <tr>
-                        <td>Media per anno</td>
+                        <td className="vertical-line">Media per anno</td>
                         <td id="number">{totals.averageFWA}</td>
                         <td id="number">{totals.averageFiber}</td>
                     </tr>

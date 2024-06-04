@@ -17,17 +17,23 @@ export default function CardChart(props: {
     readonly cardChartProps : CardChartProps
 }) {
     const options = {
-        maintainAspectRatio: false, 
-        responsive: true ,
+        maintainAspectRatio: false,
+        responsive: true,
         plugins: {
-          title: {
-              display: true
-          }
+            legend: {
+              labels: {
+                  usePointStyle: true,
+                  color: 'white',
+                  font: {
+                      size: 16
+                  }
+              }
+            }
         }
     };
 
     const cardChartProps = props.cardChartProps;
-    const { title, text, littleTable, url: url} = cardChartProps;
+    const { title, text, littleTable, url, firstChartAllowedType, secondChartAllowedType, firstChartallowMoreHeight, secondChartallowMoreHeight} = cardChartProps;
     const [dataFisrtChart, setDataFisrtChart] = useState<any>({});
     const [dataSecondChart, setDataSecondChart] = useState<any>({});
     const [loading, setLoading] = useState<boolean>(true);
@@ -44,7 +50,6 @@ export default function CardChart(props: {
                 const keys = Object.keys(data)
                 setDataFisrtChart(jsonToDatasetForBarChart(data[keys[0]]));
                 setDataSecondChart(jsonToDatasetForBarChart(data[keys[1]]));
-                console.log(dataFisrtChart)
                 setLoading(false);
                 if (littleTable) {
                     setStastics(calculateCompletedTotals(data));
@@ -61,8 +66,8 @@ export default function CardChart(props: {
 
     useEffect(() => {
         if (!loading && dataFisrtChart && dataFisrtChart.labels) {
-            handleChangeChartType("bar chart",0);
-            handleChangeChartType("bar chart",1);
+            handleChangeChartType(firstChartAllowedType[0],0);
+            handleChangeChartType(secondChartAllowedType[0],1);
         }
     }, [loading, dataFisrtChart]);
 
@@ -87,8 +92,9 @@ export default function CardChart(props: {
         }
 
         switch (type) {
+            
             case "bar chart":
-                setComponent(<Bar data={data} options={options}/>);
+                setComponent(<Bar data={data} options={options} />);
                 break;
             case "pie":
                 setComponent(<Pie data={data} options={options}/>);
@@ -96,7 +102,7 @@ export default function CardChart(props: {
             case "line":
                 setComponent(<Line data={data} options={options}/>);
                 break;
-            case "Doughnut":
+            case "doughnut":
                 setComponent(<Doughnut data={data} options={options}/>);
                 break;
             default:
@@ -124,25 +130,19 @@ export default function CardChart(props: {
                 <div className="card-chart-chart">
                     {!loading && (
                         <>
-                            <div>
-                                <select className="card-chart-select" defaultValue={"bar chart"} onChange={ e => {
+                            <div className={firstChartallowMoreHeight? "high": ""}>
+                                <select className="card-chart-select" defaultValue={firstChartAllowedType[0]} onChange={ e => {
                                     handleChangeChartType(e.target.value,0)
                                     }}>
-                                    <option value="bar chart">Bar chart</option>
-                                    <option value="pie">Pie</option>
-                                    <option value="line">Line</option>
-                                    <option value="Doughnut">Doughnut</option>
+                                    {firstChartAllowedType.map( x => <option value={x}>{x}</option>)}
                                 </select>
                                 {firstComponent != null && firstComponent}
                             </div>
-                            <div>
-                                <select className="card-chart-select" defaultValue={"bar chart"} onChange={ e => {
+                            <div className={secondChartallowMoreHeight? "high": ""}>
+                                <select className="card-chart-select" defaultValue={secondChartAllowedType[0]} onChange={ e => {
                                     handleChangeChartType(e.target.value,1)
                                     }}>
-                                    <option value="bar chart">Bar chart</option>
-                                    <option value="pie">Pie</option>
-                                    <option value="line">Line</option>
-                                    <option value="Doughnut">Doughnut</option>
+                                    {secondChartAllowedType.map( x => <option value={x}>{x}</option>)}
                                 </select>
                                 {secondComponent != null && secondComponent}
                             </div>

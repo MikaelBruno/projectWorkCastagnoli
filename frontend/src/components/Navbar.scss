@@ -6,7 +6,7 @@ $navbar-selected-color: #37C0C5;
 .navbar {
     display: flex;
     align-items: center;
-    height: 90px;
+    height: 60px;
     background-color: $navbar-bg-color;
     padding-left: 10%;
     position: relative; // For positioning the hamburger icon
@@ -143,7 +143,7 @@ $navbar-selected-color: #37C0C5;
 }
 
 .navbar-line {
-    top: 90px;
+    top: 60px;
     position: absolute;
     bottom: 0;
     left: 0;

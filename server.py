@@ -1,9 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-import folium
-import geopandas as gpd
-from IPython.display import display
 from flask import Flask, jsonify
 from flask_cors import CORS
 app = Flask(__name__)
@@ -59,6 +56,61 @@ def get_coverage_italy():
     })
 
     return res
+
+@app.route('/future-construction-site/italy', methods=['GET'])
+def get_future_construction_site_italy():
+    open_fibra_cablata = df[df['Fibra'] == 1]['Regione'].value_counts().to_dict()
+    open_fwa = df[df['FWA'] == 1]['Regione'].value_counts().to_dict()
+    
+    programmed_fibra_cablata = df[df['Stato Fibra'].str.contains(str_prog, na=False)]['Regione'].value_counts().to_dict()
+    programmed_fwa = df[df['Stato FWA'].str.contains(str_prog, na=False)]['Regione'].value_counts().to_dict()
+
+    # Creazione della risposta JSON
+    res = jsonify({
+        "Cantieri aperti": {'Fibra': open_fibra_cablata, 'FWA': open_fwa},
+        "Cantieri programmati": {'Fibra': programmed_fibra_cablata, 'FWA': programmed_fwa},
+    })
+
+    return res
+
+@app.route('/fwa-vs-fibra/italy', methods=['GET'])
+def get_fwa_vs_fibra_italy():
+    valori_fibra = df[(df['Fibra'] == 1) & (df['Piano fibra (anno)'] != 0)]['Piano fibra (anno)'].value_counts().sort_index().to_dict()
+    valori_fwa = df[(df['FWA'] == 1) & (df['Piano FWA (anno)'] != 0)]['Piano FWA (anno)'].value_counts().sort_index().to_dict()
+    valori_df = pd.DataFrame({'Fibra': valori_fibra, 'FWA': valori_fwa})
+    
+    # Calcolo dell'incremento % per fibra
+    df_incr_fiber = pd.DataFrame({'Valori': valori_fibra})
+    df_incr_fiber.loc[2019, 'Incremento'] = 0
+    for i in range(2020, 2024):
+        nuovo_valore = ((df_incr_fiber.loc[i, 'Valori'] - df_incr_fiber.loc[i-1, 'Valori']) / df_incr_fiber.loc[i-1, 'Valori']) * 100 
+        df_incr_fiber.loc[i, 'Incremento'] = nuovo_valore
+        
+    # Calcolo dell'incremento % per FWA
+    df_incr_fwa = pd.DataFrame({'Valori': valori_fwa})
+    df_incr_fwa.loc[2018, 'Incremento'] = 0
+    for i in range(2019, 2023):
+        nuovo_valore = ((df_incr_fwa.loc[i, 'Valori'] - df_incr_fwa.loc[i-1, 'Valori']) / df_incr_fwa.loc[i-1, 'Valori']) * 100 
+        df_incr_fwa.loc[i, 'Incremento'] = nuovo_valore
+        
+    # Conversione dei DataFrame in dizionari
+    incr_fiber_dict = df_incr_fiber.to_dict(orient='index')
+    incr_fwa_dict = df_incr_fwa.to_dict(orient='index')
+    
+    # Costruzione della risposta JSON
+    res = jsonify({
+        "andamento": {
+            "fibra": valori_fibra,
+            "fwa": valori_fwa
+        },
+        "incremento": {
+            "fibra": incr_fiber_dict,
+            "fwa": incr_fwa_dict
+        }
+    })
+    
+    return res
+
 
 if __name__ == '__main__':
     app.run(debug=True)

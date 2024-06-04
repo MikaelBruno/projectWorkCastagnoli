@@ -16,12 +16,18 @@ export default function CardChartWithTwoTables(props: {
     readonly cardChartProps : CardChartProps
 }) {
     const options = {
-        maintainAspectRatio: false, 
-        responsive: true ,
+        maintainAspectRatio: false,
+        responsive: true,
         plugins: {
-          title: {
-              display: true
-          }
+            legend: {
+              labels: {
+                  usePointStyle: true,
+                  color: 'white',
+                  font: {
+                      size: 16
+                  }
+              }
+            }
         }
     };
     console.log("dio porcone")

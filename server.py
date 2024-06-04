@@ -45,14 +45,20 @@ def get_coverage_italy():
     c0_1 = df[(df['Fibra'] == 1) | (df['FWA'] == 1)].shape[0] - c1_1
     c0_0 = df[(df['Fibra'] == 0) & (df['FWA'] == 0)].shape[0]
 
-    terminatiFO = df[(df['Stato Fibra'].str.contains(str_term, na=False)) & (df['Fibra'] != 0)]['Piano fibra (anno)'].value_counts().sort_index() # sort index gli ordina cronologicamente
+    # Creazione della serie
+    serie_coperture = pd.Series({'Entrambe': c1_1, 'Fibra o FWA': c0_1, 'Nessuna': c0_0}).to_dict()
 
-    res = pd.DataFrame({
-        "Fiber": {'Terminati': terminatiFO},
-        "Cover": {'Entrambe': c1_1, 'Fibra o FWA': c0_1, 'Nessuna': c0_0}
-        })
+    # Conteggio delle regioni con stati specifici per Fibra e FWA
+    fibra_cablata = df[df['Stato Fibra'].str.contains(str_term, na=False)]['Regione'].value_counts().to_dict()
+    fwa = df[df['Stato FWA'].str.contains(str_term, na=False)]['Regione'].value_counts().to_dict()
 
-    return res.to_json()
+    # Creazione della risposta JSON
+    res = jsonify({
+        "cantieri": {'Fibra': fibra_cablata, 'FWA': fwa},
+        "Cover": {"copertura" : serie_coperture},
+    })
+
+    return res
 
 if __name__ == '__main__':
     app.run(debug=True)

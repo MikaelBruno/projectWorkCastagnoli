@@ -38,11 +38,13 @@ export default function CardChart(props: {
 
     useEffect(() => {
         axios.get(url).then(response => {
+            console.log("chiamo il porco di dio")
             if (response.status === 200) {
                 const data = response.data;
                 const keys = Object.keys(data)
                 setDataFisrtChart(jsonToDatasetForBarChart(data[keys[0]]));
                 setDataSecondChart(jsonToDatasetForBarChart(data[keys[1]]));
+                console.log(dataFisrtChart)
                 setLoading(false);
                 if (littleTable) {
                     setStastics(calculateCompletedTotals(data));
@@ -55,14 +57,14 @@ export default function CardChart(props: {
         }).finally(() => {
             
         });
-    }, []);
+    }, [url, littleTable]);
 
     useEffect(() => {
         if (!loading && dataFisrtChart && dataFisrtChart.labels) {
             handleChangeChartType("bar chart",0);
             handleChangeChartType("bar chart",1);
         }
-    }, [loading]);
+    }, [loading, dataFisrtChart]);
 
     function handleChangeChartType(type: string, chart: number) {
         if (!dataFisrtChart || !dataFisrtChart.labels) {

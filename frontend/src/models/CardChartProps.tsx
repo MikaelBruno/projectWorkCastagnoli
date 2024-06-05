@@ -10,4 +10,5 @@ export interface CardChartProps {
     readonly firstChartallowMoreHeight? : boolean;
     readonly secondChartallowMoreHeight? : boolean;
     readonly region? : string;
+    readonly years? : string[]
 }

@@ -66,16 +66,16 @@ export default function CardChartRegionale(props: {
     };
 
     const cardChartProps = props.cardChartProps;
-    const { title, text, littleTable, url, firstChartAllowedType, secondChartAllowedType, firstChartallowMoreHeight, secondChartallowMoreHeight, region} = cardChartProps;
+    const { title, text, littleTable, url, firstChartAllowedType, firstChartallowMoreHeight, region, years} = cardChartProps;
     const [dataFisrtChart, setDataFisrtChart] = useState<any>({});
     const [loading, setLoading] = useState<boolean>(true);
     const [stastics, setStastics] = useState<CategoryTotals>();
     const [firstComponent, setFirstComponent] = useState<React.JSX.Element | null>(null);
     const [typeChart, setTypeChart] = useState<string>(firstChartAllowedType[0])
-    const [year, setYear] = useState<string|null>(null)
+    const [year, setYear] = useState<string>(years != undefined ? years[0] : "tutti")
 
     useEffect(() => {
-        const urlRegion = url+region
+        const urlRegion =  `${url+region}\\${year}`
         axios.get(urlRegion).then(response => {
             if (response.status === 200) {
                 const data = response.data;
@@ -95,13 +95,17 @@ export default function CardChartRegionale(props: {
         }).finally(() => {
             
         });
-    }, [url, region]);
+    }, [url, region, year]);
 
     useEffect(() => {
         if (!loading && dataFisrtChart && dataFisrtChart.labels) {
             handleChangeChartType(firstChartAllowedType[0]);
         }
     }, [loading, dataFisrtChart]);
+
+    function handleChangeChartYear(value: string) {
+        setYear(value)
+    }
 
     function handleChangeChartType(type: string) {
         if (!dataFisrtChart || !dataFisrtChart.labels) {
@@ -150,11 +154,21 @@ export default function CardChartRegionale(props: {
                     {!loading && (
                         <>
                             <div className={firstChartallowMoreHeight? "high": ""}>
-                                <select className="card-chart-select" value={typeChart} onChange={ e => {
-                                    handleChangeChartType(e.target.value)
-                                    }}>
-                                    {firstChartAllowedType.map( x => <option value={x}>{x}</option>)}
-                                </select>
+                                <div className="selection">
+                                    <select className="card-chart-select" value={typeChart} onChange={ e => {
+                                        handleChangeChartType(e.target.value)
+                                        }}>
+                                        {firstChartAllowedType.map( x => <option value={x}>{x}</option>)}
+                                    </select>
+                                    {years != undefined ? 
+                                        <select className="card-chart-select" value={year} onChange={ e => {
+                                            handleChangeChartYear(e.target.value)
+                                            }}>
+                                            {years.map( x => <option value={x}>{x}</option>)}
+                                        </select> : null
+                                    }
+                                </div>
+                                
                                 {firstComponent != null && firstComponent}
                             </div>
                             

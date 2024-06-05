@@ -68,7 +68,7 @@ export default function Nazionale() {
                         options={italianRegions}
                     />
                 )}
-                {cardChartProps.region}
+
                 <CardChartRegionale cardChartProps={cardChartProps}/>
         </>
     )

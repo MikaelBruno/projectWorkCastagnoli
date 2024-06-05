@@ -45,6 +45,12 @@ $scrollbar-thumb-hover-color: #666A75;
         background-color: $scrollbar-thumb-hover-color;
     }
 
+    .selection{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+    }
+
     .card-chart-select {
         background-color: $background-color;
         color: $font-color;

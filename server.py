@@ -112,13 +112,20 @@ def get_fwa_vs_fibra_italy():
     
     return res
 
-@app.route('/fwa-construction-site/<region>', methods=['GET'])
-def get_fwa_construction_site_region(region:str):
-    
+@app.route('/fwa-construction-site/<region>/<year>', methods=['GET'])
+def get_fwa_construction_site_region(region:str,year:str):
     df_region = df[df['Regione'] == region]
-    terminati = df_region[(df_region['Stato FWA'].str.contains(str_term, na=False)) & (df_region['FWA'] != 0)]['Provincia'].value_counts().sort_index().fillna(0).to_dict()
-    in_esecuzione = df_region[(df_region['Stato FWA'].str.contains(str_esec, na=False)) & (df_region['FWA'] != 0)]['Provincia'].value_counts().sort_index().fillna(0).to_dict()
-    in_progettazione = df_region[(df_region['Stato FWA'].str.contains(str_prog, na=False)) & (df_region['FWA'] != 0)]['Provincia'].value_counts().sort_index().fillna(0).to_dict()
+    
+    if year == "Tutti" :
+        terminati = df_region[(df_region['Stato FWA'].str.contains(str_term, na=False)) & (df_region['FWA'] != 0)]['Provincia'].value_counts().sort_index().fillna(0).to_dict()
+        in_esecuzione = df_region[(df_region['Stato FWA'].str.contains(str_esec, na=False)) & (df_region['FWA'] != 0)]['Provincia'].value_counts().sort_index().fillna(0).to_dict()
+        in_progettazione = df_region[(df_region['Stato FWA'].str.contains(str_prog, na=False)) & (df_region['FWA'] != 0)]['Provincia'].value_counts().sort_index().fillna(0).to_dict()
+    
+    else: 
+        year = int(year)
+        terminati = df_region[(df_region['Stato FWA'].str.contains(str_term, na=False)) & (df_region['FWA'] != 0) & (df_region['Piano FWA (anno)'] == year)]['Provincia'].value_counts().sort_index().fillna(0).to_dict()
+        in_esecuzione = df_region[(df_region['Stato FWA'].str.contains(str_esec, na=False)) & (df_region['FWA'] != 0) & (df_region['Piano FWA (anno)'] == year)]['Provincia'].value_counts().sort_index().fillna(0).to_dict()
+        in_progettazione = df_region[(df_region['Stato FWA'].str.contains(str_prog, na=False)) & (df_region['FWA'] != 0) & (df_region['Piano FWA (anno)'] == year)]['Provincia'].value_counts().sort_index().fillna(0).to_dict()
     
     res = jsonify({
         "FWA" : {'In progettazione': in_progettazione, 'In esecuzione': in_esecuzione, 'Terminati': terminati}

@@ -16,6 +16,23 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend,
 export default function CardChart(props: {
     readonly cardChartProps : CardChartProps
 }) {
+
+    const optionsCircle = {
+        maintainAspectRatio: false,
+        responsive: true,
+        plugins: {
+            legend: {
+              labels: {
+                  usePointStyle: true,
+                  color: 'white',
+                  font: {
+                      size: 16
+                  }
+              }
+            }
+        }
+    }
+
     const options = {
         maintainAspectRatio: false,
         responsive: true,
@@ -29,6 +46,24 @@ export default function CardChart(props: {
                   }
               }
             }
+        },
+        scales : {
+            x: {
+                grid: {
+                    color: 'rgba(251, 255, 241, 0.4)', // Cambia il colore delle righe verticali
+                },
+                ticks: {
+                    color: 'rgba(251, 255, 241, 0.4)'
+                }
+            },
+            y: {
+                grid: {
+                    color: 'rgba(251, 255, 241, 0.4)', // Cambia il colore delle righe orizzontali
+                },
+                ticks: {
+                    color: 'rgba(251, 255, 241, 0.4)'
+                }
+            },
         }
     };
 
@@ -97,13 +132,13 @@ export default function CardChart(props: {
                 setComponent(<Bar data={data} options={options} />);
                 break;
             case "pie":
-                setComponent(<Pie data={data} options={options}/>);
+                setComponent(<Pie data={data} options={optionsCircle}/>);
                 break;
             case "line":
                 setComponent(<Line data={data} options={options}/>);
                 break;
             case "doughnut":
-                setComponent(<Doughnut data={data} options={options}/>);
+                setComponent(<Doughnut data={data} options={optionsCircle}/>);
                 break;
             default:
                 setComponent(null);

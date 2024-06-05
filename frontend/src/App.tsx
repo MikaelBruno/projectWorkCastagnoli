@@ -4,10 +4,11 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import VerticaBarChart from './components/VerticalBarChart';
 import Navbar from './components/Navbar';
 import Nazionale from './pages/Nazionale';
+import Regionale from "./pages/Regionale"
 
 
 const National: React.FC = () => <><Nazionale /></>;
-const Regional: React.FC = () => <div></div>;
+const Regional: React.FC = () => <><Regionale /></>;
 const Comparazione: React.FC = () => <div></div>;
 
 

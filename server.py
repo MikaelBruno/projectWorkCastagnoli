@@ -10,6 +10,7 @@ df['Piano fibra (anno)'] = df['Piano fibra (anno)'].fillna(0)
 df['Piano FWA (anno)'] = df['Piano FWA (anno)'].fillna(0)
 df['Piano fibra (anno)'] = df['Piano fibra (anno)'].astype('int64')
 df['Piano FWA (anno)'] = df['Piano FWA (anno)'].astype('int64')
+df['Regione'].str.lower()
  
 str_prog = 'in programmazione|in progettazione' # In progettazione
 str_esec = 'in esecuzione' # In esecuzione
@@ -111,6 +112,19 @@ def get_fwa_vs_fibra_italy():
     
     return res
 
+@app.route('/fwa-construction-site/<region>', methods=['GET'])
+def get_fwa_construction_site_region(region:str):
+    
+    df_region = df[df['Regione'] == region]
+    terminati = df_region[(df_region['Stato FWA'].str.contains(str_term, na=False)) & (df_region['FWA'] != 0)]['Provincia'].value_counts().sort_index().fillna(0).to_dict()
+    in_esecuzione = df_region[(df_region['Stato FWA'].str.contains(str_esec, na=False)) & (df_region['FWA'] != 0)]['Provincia'].value_counts().sort_index().fillna(0).to_dict()
+    in_progettazione = df_region[(df_region['Stato FWA'].str.contains(str_prog, na=False)) & (df_region['FWA'] != 0)]['Provincia'].value_counts().sort_index().fillna(0).to_dict()
+    
+    res = jsonify({
+        "FWA" : {'In progettazione': in_progettazione, 'In esecuzione': in_esecuzione, 'Terminati': terminati}
+    })
+    
+    return res
 
 if __name__ == '__main__':
     app.run(debug=True)

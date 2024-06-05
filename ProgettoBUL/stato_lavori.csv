@@ -68,7 +68,7 @@ Toscana;Lucca;Seravezza;in programmazione;in progettazione esecutiva;;;0;1;;2022
 Campania;Avellino;Carife;terminato;terminato;POP_AV_53_CARIFE;Carife;1;1;2021;2020
 Calabria;Cosenza;Castroregio;terminato;in progettazione definitiva;;;1;1;2021;2022
 Lombardia;Como;Cucciago;terminato;in progettazione definitiva;POP_CO_13_FINO_MORNASCO;Fino Mornasco;1;1;2022;2022
-Emilia Romagna;Forl__-Cesena;Civitella di Romagna;terminato;terminato;POP_FC_04_GALEATA;Galeata;1;1;2021;2021
+Emilia Romagna;Forli-Cesena;Civitella di Romagna;terminato;terminato;POP_FC_04_GALEATA;Galeata;1;1;2021;2021
 Sardegna;Sassari;Porto Torres;terminato;in progettazione definitiva;;;1;1;2021;2022
 Marche;Ancona;Fabriano;terminato;in progettazione esecutiva;POP_AN_03_FABRIANO;Fabriano;1;1;2021;2020
 Piemonte;Novara;Pombia;in collaudo;in progettazione definitiva;POP_NO_36_POMBIA;Pombia;1;1;2022;2022
@@ -157,7 +157,7 @@ Lombardia;Sondrio;Lovero;terminato;terminato;POP_SO_29_MAZZO_DI_VALTELLINA;Mazzo
 Sicilia;Messina;Capo d'Orlando;terminato;in progettazione definitiva;POP_ME_07_TORRENOVA;Torrenova;1;1;2020;2022
 Friuli Venezia Giulia;Udine;Buttrio;in programmazione;terminato;;;0;1;;2021
 Lombardia;Como;Capiago Intimiano;in programmazione;in progettazione definitiva;;;0;1;;2021
-Emilia Romagna;Forl__-Cesena;Forlimpopoli;in programmazione;in progettazione definitiva;;;0;1;;2021
+Emilia Romagna;Forli-Cesena;Forlimpopoli;in programmazione;in progettazione definitiva;;;0;1;;2021
 Lombardia;Mantova;Castel d'Ario;in progettazione esecutiva;in progettazione definitiva;POP_MN_23_CASTEL_D'ARIO;Castel d'Ario;1;1;2023;2022
 Veneto;Treviso;Ponte di Piave;in programmazione;in collaudo;;;0;1;;2022
 Marche;Macerata;Petriolo;terminato;in progettazione definitiva;POP_MC_02_CORRIDONIA;Corridonia;1;1;2021;2022
@@ -410,7 +410,7 @@ Lombardia;Como;Lurate Caccivio;terminato;in progettazione definitiva;POP_CO_02_A
 Toscana;Siena;Castiglione d'Orcia;terminato;in progettazione esecutiva;POP_SI_15_CASTIGLIONE_D'ORCIA;Castiglione d'Orcia;1;1;2022;2020
 Lombardia;Como;Griante;in esecuzione;in progettazione definitiva;POP_CO_14_TREMEZZINA;Tremezzina;1;1;2023;2022
 Veneto;Padova;Barbona;terminato;in progettazione definitiva;POP_PD_30_SANT'URBANO;Sant'Urbano;1;1;2021;2022
-Emilia Romagna;Forl__-Cesena;Borghi;in collaudo;terminato;POP_RN_06_SANTARCANGELO_DI_ROMAGNA;Santarcangelo di Romagna;1;1;2021;2022
+Emilia Romagna;Forli-Cesena;Borghi;in collaudo;terminato;POP_RN_06_SANTARCANGELO_DI_ROMAGNA;Santarcangelo di Romagna;1;1;2021;2022
 Campania;Salerno;Sanza;terminato;in progettazione esecutiva;POP_SA_34_SANZA;Sanza;1;1;2020;2021
 Campania;Avellino;Chiusano di San Domenico;terminato;in progettazione definitiva;POP_AV_12_SALZA_IRPINA;Salza Irpina;1;1;2022;2022
 Lombardia;Milano;Carugate;in programmazione;in progettazione definitiva;;;0;1;;2022
@@ -1161,7 +1161,7 @@ Friuli Venezia Giulia;Udine;Pocenia;terminato;in progettazione definitiva;POP_UD
 Abruzzo;L'Aquila;Campotosto;in esecuzione;in progettazione definitiva;POP_AQ_25_CAMPOTOSTO;Campotosto;1;1;2022;2022
 Calabria;Reggio di Calabria;San Lorenzo;terminato;in progettazione definitiva;;;1;1;2021;2021
 Lazio;Roma;Tivoli;in programmazione;lavori chiusi;;;0;1;;2022
-Emilia Romagna;Forl__-Cesena;Modigliana;in collaudo;terminato;POP_FC_10_MODIGLIANA;Modigliana;1;1;2022;2021
+Emilia Romagna;Forli-Cesena;Modigliana;in collaudo;terminato;POP_FC_10_MODIGLIANA;Modigliana;1;1;2022;2021
 Campania;Caserta;Castello del Matese;in esecuzione;in progettazione definitiva;POP_CE_25_SAN_GREGORIO_MATESE;San Gregorio Matese;1;1;2022;2022
 Sicilia;Agrigento;Santa Margherita di Belice;terminato;in progettazione definitiva;POP_AG_09_SANTA_MARGHERITA_DI_BELICE;Santa Margherita di Belice;1;1;2020;2020
 Basilicata;Potenza;Cersosimo;in collaudo;in progettazione definitiva;POP_PZ_04_CERSOSIMO;Cersosimo;1;1;2020;2022
@@ -1440,7 +1440,7 @@ Lombardia;Monza e della Brianza;Camparada;in esecuzione;in progettazione definit
 Lombardia;Varese;Castelveccana;in esecuzione;in progettazione esecutiva;POP_VA_64_CASTELVECCANA;Castelveccana;1;1;2023;2022
 Sardegna;Carbonia-Iglesias;Piscinas;in programmazione;in progettazione definitiva;;;0;1;;2022
 Campania;Caserta;Portico di Caserta;in programmazione;in progettazione definitiva;;;0;1;;2022
-Emilia Romagna;Forl__-Cesena;Roncofreddo;in collaudo;in progettazione definitiva;POP_FC_02_SOGLIANO AL RUBICONE;Sogliano al Rubicone;1;1;2021;2022
+Emilia Romagna;Forli-Cesena;Roncofreddo;in collaudo;in progettazione definitiva;POP_FC_02_SOGLIANO AL RUBICONE;Sogliano al Rubicone;1;1;2021;2022
 Puglia;Barletta-Andria-Trani;Margherita di Savoia;terminato;in progettazione definitiva;;;1;1;2022;2022
 Piemonte;Cuneo;Castelletto Uzzone;in esecuzione;in collaudo;POP_CN_102_CASTELLETTO_UZZONE;Castelletto Uzzone;1;1;2023;2021
 Emilia Romagna;Piacenza;Rivergaro;in programmazione;in progettazione definitiva;;;0;1;;2022
@@ -2088,7 +2088,7 @@ Calabria;Reggio di Calabria;Canolo;;in progettazione esecutiva;;;0;1;;2022
 Marche;Pesaro e Urbino;Montefelcino;terminato;lavori chiusi;POP_PU_07_MONTEFELCINO;Montefelcino;1;1;2021;2020
 Emilia Romagna;Modena;Finale Emilia;in programmazione;in progettazione esecutiva;;;0;1;;2022
 Campania;Avellino;Lacedonia;terminato;terminato;POP_AV_18_LACEDONIA;Lacedonia;1;1;2020;2020
-Emilia Romagna;Forl__-Cesena;Savignano sul Rubicone;in programmazione;in progettazione definitiva;;;0;1;;2022
+Emilia Romagna;Forli-Cesena;Savignano sul Rubicone;in programmazione;in progettazione definitiva;;;0;1;;2022
 Lombardia;Pavia;Sant'Angelo Lomellina;in progettazione esecutiva;in progettazione definitiva;POP_PV_14_ROBBIO;Robbio;1;1;2023;2022
 Lazio;Roma;Arsoli;in esecuzione;in progettazione definitiva;POP_RM_55_ARSOLI;Arsoli;1;1;2021;2020
 Sicilia;Agrigento;Montallegro;terminato;terminato;POP_AG_11_MONTALLEGRO;Montallegro;1;1;2021;2020
@@ -2373,7 +2373,7 @@ Veneto;Treviso;Treviso;in programmazione;in programmazione;;;0;0;;
 Lombardia;Varese;Saronno;in programmazione;in progettazione definitiva;;;0;1;;2022
 Piemonte;Torino;Albiano d'Ivrea;terminato;in collaudo;POP_TO_46_ALBIANO_D'IVREA;Albiano d'Ivrea;1;1;2022;2022
 Lombardia;Como;Plesio;in esecuzione;in progettazione definitiva;POP_CO_29_PLESIO;Plesio;1;1;2022;2022
-Emilia Romagna;Forl__-Cesena;Galeata;terminato;terminato;POP_FC_04_GALEATA;Galeata;1;1;2020;2020
+Emilia Romagna;Forli-Cesena;Galeata;terminato;terminato;POP_FC_04_GALEATA;Galeata;1;1;2020;2020
 Emilia Romagna;Ferrara;Argenta;in programmazione;in progettazione esecutiva;;;0;1;;2021
 Piemonte;Verbano-Cusio-Ossola;Gravellona Toce;in programmazione;in progettazione definitiva;;;0;1;;2022
 Calabria;Vibo Valentia;Brognaturo;;lavori chiusi;;;0;1;;2020
@@ -2451,7 +2451,7 @@ Lombardia;Lodi;Cervignano d'Adda;terminato;in progettazione definitiva;POP_LO_03
 Basilicata;Matera;Cirigliano;terminato;terminato;POP_MT_07_GORGOGLIONE;Gorgoglione;1;1;2019;2022
 Piemonte;Verbano-Cusio-Ossola;Crevoladossola;terminato;in progettazione definitiva;POP_VB_03_CREVOLADOSSOLA;Crevoladossola;1;1;2020;2022
 Veneto;Treviso;Possagno;in collaudo;in progettazione definitiva;POP_TV_05_CASTELCUCCO;Castelcucco;1;1;2021;2022
-Emilia Romagna;Forl__-Cesena;Portico e San Benedetto;terminato;in programmazione;POP_FC_05_PORTICO_E_SAN_BENEDETTO;Portico e San Benedetto;1;0;2021;
+Emilia Romagna;Forli-Cesena;Portico e San Benedetto;terminato;in programmazione;POP_FC_05_PORTICO_E_SAN_BENEDETTO;Portico e San Benedetto;1;0;2021;
 Campania;Caserta;Arienzo;in programmazione;in progettazione definitiva;;;0;1;;2022
 Piemonte;Cuneo;Polonghera;terminato;in progettazione definitiva;POP_CN_10_CASALGRASSO;Casalgrasso;1;1;2021;2021
 Veneto;Vicenza;Montegaldella;terminato;in collaudo;POP_PD_08_VEGGIANO;Veggiano;1;1;2021;2021
@@ -2489,7 +2489,7 @@ Campania;Benevento;Apollosa;terminato;terminato;POP_BN_25_APOLLOSA;Apollosa;1;1;
 Piemonte;Asti;Cerreto d'Asti;terminato;in progettazione definitiva;POP_AT_04_CERRETO_D'ASTI;Cerreto d'Asti;1;1;2022;2022
 Marche;Ascoli Piceno;Maltignano;terminato;in progettazione definitiva;POP_AP_04_CASTEL_DI_LAMA;Castel di Lama;1;1;2021;2022
 Abruzzo;Chieti;Torrebruna;terminato;in programmazione;POP_CH_20_TORREBRUNA;Torrebruna;1;0;2020;
-Emilia Romagna;Forl__-Cesena;Tredozio;terminato;in programmazione;POP_FC_08_TREDOZIO;Tredozio;1;0;2021;
+Emilia Romagna;Forli-Cesena;Tredozio;terminato;in programmazione;POP_FC_08_TREDOZIO;Tredozio;1;0;2021;
 Veneto;Belluno;Vallada Agordina;terminato;terminato;POP_BL_06_FALCADE;Falcade;1;1;2020;2021
 Trentino Alto Adige-Trento;Trento;Tre Ville (ex Preore);terminato;in progettazione definitiva;POP_TN_06_PREORE;Tre Ville (ex Preore);1;1;2021;2022
 Calabria;Catanzaro;Sorbo San Basile;;lavori chiusi;;;0;1;;2021
@@ -2796,7 +2796,7 @@ Piemonte;Cuneo;Elva;in esecuzione;in progettazione definitiva;;;1;1;2023;2022
 Piemonte;Asti;Viale;terminato;in progettazione definitiva;POP_AT_10_VIALE;Viale;1;1;2020;2022
 Marche;Fermo;Montelparo;terminato;in progettazione esecutiva;POP_FM_04_MONTELPARO;Montelparo;1;1;2020;2020
 Marche;Fermo;Montegiorgio;in collaudo;in progettazione definitiva;POP_FM_05_MONTEGIORGIO;Montegiorgio;1;1;2021;2022
-Emilia Romagna;Forl__-Cesena;Forlì;lavori chiusi;in progettazione esecutiva;POP_RA_09_RAVENNA;Cervia;1;1;2022;2020
+Emilia Romagna;Forli-Cesena;Forlì;lavori chiusi;in progettazione esecutiva;POP_RA_09_RAVENNA;Cervia;1;1;2022;2020
 Lombardia;Cremona;Soresina;in programmazione;in progettazione definitiva;;;0;1;;2022
 Piemonte;Torino;San Ponso;terminato;in progettazione definitiva;POP_TO_151_SAN_PONSO;San Ponso;1;1;2020;2022
 Calabria;Catanzaro;Falerna;terminato;terminato;;;1;1;2022;2022
@@ -2863,7 +2863,7 @@ Piemonte;Cuneo;Neviglie;terminato;in progettazione definitiva;POP_CN_89_MANGO;Ma
 Lazio;Roma;Civitella San Paolo;terminato;in progettazione esecutiva;POP_RM_57_CIVITELLA_SAN_PAOLO;Civitella San Paolo;1;1;2020;2021
 Puglia;Lecce;Calimera;terminato;in progettazione definitiva;;;1;1;2021;2022
 Lombardia;Bergamo;Covo;in programmazione;in progettazione definitiva;;;0;1;;2022
-Emilia Romagna;Forl__-Cesena;Montiano;terminato;in progettazione definitiva;POP_FC_11_LONGIANO;Longiano;1;1;2021;2021
+Emilia Romagna;Forli-Cesena;Montiano;terminato;in progettazione definitiva;POP_FC_11_LONGIANO;Longiano;1;1;2021;2021
 Lombardia;Como;Asso;in programmazione;in progettazione definitiva;POP_CO_04_CANZO;Canzo;0;1;;2022
 Piemonte;Alessandria;Sala Monferrato;lavori chiusi;in progettazione definitiva;POP_AL_22_OZZANO_MONFERRATO;Ozzano Monferrato;1;1;2023;2022
 Piemonte;Asti;Nizza Monferrato;in programmazione;in collaudo;;;0;1;;2022
@@ -2892,7 +2892,7 @@ Lombardia;Bergamo;Telgate;in collaudo;in progettazione definitiva;POP_BG_72_TELG
 Umbria;Perugia;Norcia;in esecuzione;lavori chiusi;POP_PG_17_NORCIA;Norcia;1;1;2021;2020
 Piemonte;Vercelli;Varallo;terminato;terminato;POP_VC_06_VARALLO;Varallo;1;1;2021;2020
 Piemonte;Alessandria;Ovada;terminato;in collaudo;POP_AL_07_MORBELLO;Morbello;1;1;2021;2021
-Emilia Romagna;Forl__-Cesena;Meldola;in programmazione;in progettazione definitiva;;;0;1;;2022
+Emilia Romagna;Forli-Cesena;Meldola;in programmazione;in progettazione definitiva;;;0;1;;2022
 Toscana;Pisa;Chianni;terminato;in progettazione definitiva;POP_PI_12_CHIANNI;Chianni;1;1;2022;2022
 Veneto;Vicenza;Valdagno;terminato;in progettazione definitiva;POP_VI_25_VALDAGNO;Valdagno;1;1;2021;2022
 Piemonte;Vercelli;Civiasco;terminato;in progettazione definitiva;POP_VC_02_CIVIASCO;Civiasco;1;1;2021;2022
@@ -3045,7 +3045,7 @@ Lombardia;Sondrio;Rogolo;in esecuzione;in progettazione definitiva;POP_SO_08_DUB
 Marche;Macerata;Mogliano;in collaudo;terminato;POP_MC_29_MOGLIANO;Mogliano;1;1;2021;2022
 Trentino Alto Adige-Trento;Trento;Borgo Lares (ex Bolbeno);terminato;in progettazione definitiva;POP_TN_06_PREORE;Tre Ville (ex Preore);1;1;2022;2022
 Puglia;Foggia;Zapponeta;in programmazione;in collaudo;;;0;1;;2020
-Emilia Romagna;Forl__-Cesena;Cesenatico;in programmazione;in progettazione esecutiva;;;0;1;;2022
+Emilia Romagna;Forli-Cesena;Cesenatico;in programmazione;in progettazione esecutiva;;;0;1;;2022
 Lazio;Roma;Castel Gandolfo;terminato;in progettazione definitiva;POP_RM_08_ARICCIA;Ariccia;1;1;2019;2022
 Lazio;Roma;San Polo dei Cavalieri;in esecuzione;lavori chiusi;POP_RM_13_SAN_POLO_DEI_CAVALIERI;San Polo dei Cavalieri;1;1;2022;2021
 Lombardia;Como;Merone;terminato;in progettazione definitiva;POP_CO_61_MERONE;Merone;1;1;2020;2021
@@ -3127,7 +3127,7 @@ Calabria;Cosenza;Lappano;;in progettazione esecutiva;;;0;1;;2022
 Toscana;Grosseto;Gavorrano;in esecuzione;in progettazione esecutiva;POP_GR_03_GAVORRANO;Gavorrano;1;1;2022;2020
 Piemonte;Torino;Bardonecchia;in programmazione;in progettazione definitiva;;;0;1;;2022
 Marche;Ancona;Cupramontana;in progettazione esecutiva;in progettazione definitiva;POP_AN_12_CUPRAMONTANA;Cupramontana;1;1;2020;2022
-Emilia Romagna;Forl__-Cesena;Castrocaro Terme e Terra del Sole;terminato;in progettazione definitiva;POP_FC_09_CASTROCARO_TERME;Castrocaro Terme e Terra del Sole;1;1;2020;2020
+Emilia Romagna;Forli-Cesena;Castrocaro Terme e Terra del Sole;terminato;in progettazione definitiva;POP_FC_09_CASTROCARO_TERME;Castrocaro Terme e Terra del Sole;1;1;2020;2020
 Sardegna;Oristano;Sennariolo;;in progettazione definitiva;;;0;1;;2022
 Campania;Avellino;San Michele di Serino;terminato;in progettazione definitiva;POP_AV_34_SAN_MICHELE_DI_SERINO;San Michele di Serino;1;1;2020;2022
 Veneto;Treviso;Fregona;in esecuzione;in progettazione definitiva;POP_TV_20_FREGONA;Fregona;1;1;2023;2022
@@ -3591,7 +3591,7 @@ Calabria;Cosenza;Trebisacce;terminato;terminato;;;1;1;2021;2021
 Calabria;Cosenza;Altomonte;in esecuzione;lavori chiusi;;;1;1;2022;2022
 Piemonte;Vercelli;Fontanetto Po;in programmazione;in progettazione definitiva;;;0;1;;2022
 Valle d'Aosta;Aosta;Arvier;in collaudo;terminato;POP_AO_33_ARVIER;Arvier;1;1;2021;2022
-Emilia Romagna;Forl__-Cesena;Rocca San Casciano;terminato;terminato;POP_FC_07_ROCCA_SAN_CASCIANO;Rocca San Casciano;1;1;2021;2020
+Emilia Romagna;Forli-Cesena;Rocca San Casciano;terminato;terminato;POP_FC_07_ROCCA_SAN_CASCIANO;Rocca San Casciano;1;1;2021;2020
 Emilia Romagna;Piacenza;Morfasso;in collaudo;in progettazione esecutiva;POP_PC_04_BETTOLA;Bettola;1;1;2021;2022
 Sardegna;Oristano;Palmas Arborea;;lavori chiusi;;;0;1;;2021
 Trentino Alto Adige-Trento;Trento;Bedollo;in collaudo;in progettazione esecutiva;POP_TN_34_BASELGA_DI_PINE;Baselga di Pin�;1;1;2022;2021
@@ -3646,7 +3646,7 @@ Lazio;Viterbo;Ronciglione;terminato;in progettazione esecutiva;POP_VT_10_RONCIGL
 Lombardia;Milano;Rodano;in programmazione;in progettazione definitiva;;;0;1;;2022
 Piemonte;Vercelli;Stroppiana;terminato;in progettazione definitiva;POP_VC_01_PERTENGO;Pertengo;1;1;2020;2022
 Lombardia;Bergamo;Albino;terminato;in collaudo;POP_BG_07_VERTOVA;Vertova;1;1;2019;2020
-Emilia Romagna;Forl__-Cesena;Sarsina;in esecuzione;in progettazione definitiva;POP_FC_03_VERGHERETO;Verghereto;1;1;2021;2020
+Emilia Romagna;Forli-Cesena;Sarsina;in esecuzione;in progettazione definitiva;POP_FC_03_VERGHERETO;Verghereto;1;1;2021;2020
 Calabria;Reggio di Calabria;Santa Cristina d'Aspromonte;terminato;in progettazione definitiva;;;1;1;2020;2022
 Calabria;Reggio di Calabria;Sant'Eufemia d'Aspromonte;terminato;in progettazione definitiva;;;1;1;2022;2022
 Veneto;Venezia;Pramaggiore;in esecuzione;in progettazione definitiva;POP_VE_14_PRAMAGGIORE;Pramaggiore;1;1;2023;2022
@@ -3814,7 +3814,7 @@ Piemonte;Torino;Villar Pellice;in esecuzione;in collaudo;POP_TO_109_VILLAR_PELLI
 Umbria;Perugia;Montone;terminato;terminato;POP_PG_11_MONTONE;Montone;1;1;2020;2022
 Veneto;Treviso;Gorgo al Monticano;in collaudo;in progettazione definitiva;POP_TV_03_GORGO_AL_MONTICANO;Gorgo al Monticano;1;1;2022;2020
 Piemonte;Cuneo;Ormea;in esecuzione;in collaudo;POP_CN_09_ORMEA;Ormea;1;1;2021;2021
-Emilia Romagna;Forl__-Cesena;Bagno di Romagna;in esecuzione;lavori chiusi;POP_FC_03_VERGHERETO;Verghereto;1;1;2021;2020
+Emilia Romagna;Forli-Cesena;Bagno di Romagna;in esecuzione;lavori chiusi;POP_FC_03_VERGHERETO;Verghereto;1;1;2021;2020
 Friuli Venezia Giulia;Pordenone;Montereale Valcellina;terminato;in programmazione;POP_PN_05_MONTEREALE_VALCELLINA;Montereale Valcellina;1;0;2020;
 Veneto;Treviso;Asolo;in esecuzione;lavori chiusi;POP_TV_05_CASTELCUCCO;Castelcucco;1;1;2023;2020
 Lombardia;Sondrio;Sondalo;terminato;in collaudo;POP_SO_06_GROSIO;Grosio;1;1;2021;2020
@@ -5220,7 +5220,7 @@ Veneto;Verona;Marano di Valpolicella;terminato;terminato;POP_VR_54_MARANO_DI_VAL
 Piemonte;Cuneo;Faule;terminato;in progettazione definitiva;POP_CN_10_CASALGRASSO;Casalgrasso;1;1;2020;2022
 Piemonte;Asti;Berzano di San Pietro;terminato;in progettazione esecutiva;POP_AT_75_MONCUCCO_TORINESE;Moncucco Torinese;1;1;2022;2022
 Calabria;Cosenza;Falconara Albanese;in progettazione esecutiva;lavori chiusi;;;1;1;2022;2022
-Emilia Romagna;Forl__-Cesena;Bertinoro;in programmazione;in progettazione esecutiva;;;0;1;;2022
+Emilia Romagna;Forli-Cesena;Bertinoro;in programmazione;in progettazione esecutiva;;;0;1;;2022
 Lombardia;Pavia;Torre d'Isola;in collaudo;in programmazione;POP_PV_11_TORRE_D'ISOLA;Torre d'Isola;1;0;2021;
 Friuli Venezia Giulia;Gorizia;Dolegna del Collio;terminato;in progettazione definitiva;POP_GO_02_DOLEGNA_DEL_COLLIO;Dolegna del Collio;1;1;2020;2022
 Friuli Venezia Giulia;Pordenone;Pordenone;in programmazione;in programmazione;;;0;0;;
@@ -5572,7 +5572,7 @@ Piemonte;Cuneo;Roccaforte Mondovì;in esecuzione;in progettazione esecutiva;POP_
 Toscana;Firenze;Tavarnelle Val di Pesa;terminato;terminato;POP_FI_10_TAVARNELLE VAL DI PESA;Tavarnelle Val di Pesa;1;1;2022;2022
 Piemonte;Torino;Chiesanuova;terminato;in progettazione definitiva;POP_TO_106_BORGIALLO;Borgiallo;1;1;2022;2022
 Sicilia;Agrigento;Ribera;in programmazione;terminato;;;0;1;;2022
-Emilia Romagna;Forl__-Cesena;Santa Sofia;in collaudo;lavori chiusi;POP_FC_04_GALEATA;Galeata;1;1;2022;2020
+Emilia Romagna;Forli-Cesena;Santa Sofia;in collaudo;lavori chiusi;POP_FC_04_GALEATA;Galeata;1;1;2022;2020
 Lombardia;Cremona;Piadena;in programmazione;in progettazione definitiva;POP_CR_02_DRIZZONA;Drizzona;0;1;;2022
 Toscana;Siena;Buonconvento;terminato;in progettazione esecutiva;POP_SI_05_MONTALCINO;Montalcino;1;1;2019;2020
 Basilicata;Potenza;Satriano di Lucania;terminato;in progettazione esecutiva;POP_PZ_03_SATRIANO_DI_LUCANIA;Satriano di Lucania;1;1;2021;2022
@@ -5899,7 +5899,7 @@ Piemonte;Torino;Chieri;in programmazione;in progettazione definitiva;;;0;1;;2022
 Sardegna;Nuoro;Osidda;;in progettazione esecutiva;;;0;1;;2021
 Lombardia;Brescia;Polpenazze del Garda;in esecuzione;in progettazione definitiva;POP_BS_03_MANERBA_DEL_GARDA;Manerba del Garda;1;1;2022;2021
 Sicilia;Enna;Centuripe;terminato;terminato;POP_EN_03_CENTURIPE;Centuripe;1;1;2021;2020
-Emilia Romagna;Forl__-Cesena;San Mauro Pascoli;in programmazione;in progettazione esecutiva;;;0;1;;2022
+Emilia Romagna;Forli-Cesena;San Mauro Pascoli;in programmazione;in progettazione esecutiva;;;0;1;;2022
 Veneto;Padova;Albignasego;in programmazione;lavori chiusi;;;0;1;;2022
 Lazio;Roma;Canterano;terminato;in progettazione esecutiva;POP_RM_29_CANTERANO;Canterano;1;1;2020;2022
 Lombardia;Lecco;Costa Masnaga;in esecuzione;in progettazione definitiva;POP_CO_60_LAMBRUGO;Lambrugo;1;1;2023;2022
@@ -5953,7 +5953,7 @@ Basilicata;Potenza;Sant'Arcangelo;terminato;in progettazione definitiva;POP_PZ_6
 Molise;Campobasso;Santa Croce di Magliano;terminato;in programmazione;POP_CB_15_SANTACROCEDIMAGLIANO;Santa Croce di Magliano;1;0;2021;
 Lombardia;Brescia;Bione;in progettazione esecutiva;in progettazione definitiva;POP_BS_07_CAINO;Caino;1;1;2022;2022
 Sicilia;Ragusa;Comiso;in progettazione esecutiva;in progettazione esecutiva;POP_RG_04_COMISO;Comiso;1;1;2022;2020
-Emilia Romagna;Forl__-Cesena;Longiano;terminato;terminato;POP_FC_11_LONGIANO;Longiano;1;1;2021;2021
+Emilia Romagna;Forli-Cesena;Longiano;terminato;terminato;POP_FC_11_LONGIANO;Longiano;1;1;2021;2021
 Lombardia;Brescia;Capo di Ponte;in esecuzione;in progettazione esecutiva;POP_BS_12_BRAONE;Braone;1;1;2023;2022
 Lazio;Rieti;Collegiove;lavori chiusi;in progettazione definitiva;POP_RI_55_NESPOLO;Nespolo;1;1;2022;2022
 Calabria;Cosenza;San Giovanni in Fiore;in progettazione esecutiva;lavori chiusi;;;1;1;2022;2022
@@ -6260,7 +6260,7 @@ Veneto;Belluno;Limana;terminato;terminato;POP_BL_38_LIMANA;Limana;1;1;2022;2021
 Veneto;Vicenza;Nanto;in esecuzione;in progettazione definitiva;POP_VI_46_NANTO;Nanto;1;1;2023;2022
 Lombardia;Varese;Cairate;in programmazione;in progettazione definitiva;;;0;1;;2022
 Lombardia;Lodi;Cornegliano Laudense;in programmazione;in programmazione;;;0;0;;
-Emilia Romagna;Forl__-Cesena;Verghereto;in collaudo;terminato;POP_FC_03_VERGHERETO;Verghereto;1;1;2021;2021
+Emilia Romagna;Forli-Cesena;Verghereto;in collaudo;terminato;POP_FC_03_VERGHERETO;Verghereto;1;1;2021;2021
 Marche;Pesaro e Urbino;Urbania;in programmazione;in progettazione definitiva;;;0;1;;2022
 Abruzzo;L'Aquila;Gagliano Aterno;terminato;in progettazione definitiva;POP_AQ_61_GAGLIANO_ATERNO;Gagliano Aterno;1;1;2020;2022
 Sardegna;Cagliari;Quartu Sant'Elena;terminato;in progettazione esecutiva;;;1;1;2021;2022
@@ -6394,7 +6394,7 @@ Lazio;Viterbo;Nepi;in programmazione;in progettazione definitiva;;;0;1;;2022
 Lombardia;Lodi;Sordio;in programmazione;in programmazione;;;0;0;;
 Piemonte;Torino;Montalto Dora;in programmazione;in progettazione definitiva;;;0;1;;2022
 Lombardia;Lecco;Imbersago;in programmazione;in progettazione definitiva;;;0;1;;2022
-Emilia Romagna;Forl__-Cesena;Predappio;terminato;terminato;POP_FC_06_PREDAPPIO;Predappio;1;1;2021;2020
+Emilia Romagna;Forli-Cesena;Predappio;terminato;terminato;POP_FC_06_PREDAPPIO;Predappio;1;1;2021;2020
 Toscana;Arezzo;Loro Ciuffenna;terminato;in progettazione esecutiva;POP_AR_11_LORO_CIUFFENNA;Loro Ciuffenna;1;1;2021;2021
 Veneto;Vicenza;Lonigo;in programmazione;in progettazione definitiva;;;0;1;;2022
 Trentino Alto Adige-Trento;Trento;Ossana;terminato;in progettazione definitiva;POP_TN_46_OSSANA;Ossana;1;1;2021;2022
@@ -6543,7 +6543,7 @@ Trentino Alto Adige-Trento;Trento;Ala;terminato;in collaudo;POP_TN_03_ALA;Ala;1;
 Trentino Alto Adige-Trento;Trento;Samone;terminato;in collaudo;POP_TN_18_VILLA_AGNEDO;Castel Ivano (ex Villa Agnedo);1;1;2022;2022
 Veneto;Verona;Mozzecane;in programmazione;in programmazione;;;0;0;;
 Lombardia;Bergamo;Canonica d'Adda;in programmazione;in progettazione definitiva;;;0;1;;2022
-Emilia Romagna;Forl__-Cesena;Sogliano al Rubicone;terminato;terminato;POP_FC_02_SOGLIANO AL RUBICONE;Sogliano al Rubicone;1;1;2021;2020
+Emilia Romagna;Forli-Cesena;Sogliano al Rubicone;terminato;terminato;POP_FC_02_SOGLIANO AL RUBICONE;Sogliano al Rubicone;1;1;2021;2020
 Lombardia;Pavia;Zenevredo;in esecuzione;in progettazione definitiva;POP_PV_25_BOSNASCO;Bosnasco;1;1;2023;2022
 Lombardia;Monza e della Brianza;Ornago;terminato;in progettazione definitiva;POP_MB_14_RONCELLO;Roncello;1;1;2022;2022
 Piemonte;Torino;Palazzo Canavese;terminato;terminato;POP_TO_126_PALAZZO_CANAVESE;Palazzo Canavese;1;1;2021;2022
@@ -6580,7 +6580,7 @@ Abruzzo;L'Aquila;Cappadocia;terminato;in programmazione;POP_AQ_05_CAPPADOCIA;Cap
 Piemonte;Verbano-Cusio-Ossola;Cannero Riviera;in esecuzione;in progettazione esecutiva;POP_VB_36_CANNERO_RIVIERA;Cannero Riviera;1;1;2022;2022
 Sicilia;Messina;San Pier Niceto;terminato;terminato;POP_ME_09_SAN_PIER_NICETO;San Pier Niceto;1;1;2020;2022
 Campania;Caserta;Liberi;in collaudo;in collaudo;POP_CE_40_LIBERI;Liberi;1;1;2021;2020
-Emilia Romagna;Forl__-Cesena;Cesena;in programmazione;lavori chiusi;;;0;1;;2022
+Emilia Romagna;Forli-Cesena;Cesena;in programmazione;lavori chiusi;;;0;1;;2022
 Friuli Venezia Giulia;Udine;Precenicco;terminato;lavori chiusi;POP_UD_08_PALAZZOLO_DELLO_STELLA;Palazzolo dello Stella;1;1;2021;2021
 Campania;Salerno;Corleto Monforte;in programmazione;in programmazione;;;0;0;;
 Abruzzo;Chieti;Palmoli;terminato;in progettazione definitiva;POP_CH_23_PALMOLI;Palmoli;1;1;2022;2020
@@ -6772,7 +6772,7 @@ Emilia Romagna;Modena;Zocca;in esecuzione;in progettazione esecutiva;POP_MO_06_Z
 Lombardia;Como;Eupilio;in esecuzione;in progettazione esecutiva;POP_CO_42_EUPILIO;Eupilio;1;1;2023;2022
 Emilia Romagna;Rimini;Montescudo - Monte Colombo (ex Monte Colombo);terminato;terminato;POP_RN_02_SAN CLEMENTE;San Clemente;1;1;2020;2021
 Friuli Venezia Giulia;Udine;Sedegliano;terminato;in progettazione definitiva;POP_UD_15_SEDEGLIANO;Sedegliano;1;1;2021;2022
-Emilia Romagna;Forl__-Cesena;Premilcuore;terminato;terminato;POP_FC_04_GALEATA;Galeata;1;1;2021;2020
+Emilia Romagna;Forli-Cesena;Premilcuore;terminato;terminato;POP_FC_04_GALEATA;Galeata;1;1;2021;2020
 Abruzzo;Teramo;Giulianova;in programmazione;in programmazione;;;0;0;;
 Trentino Alto Adige-Trento;Trento;Malè;terminato;in progettazione definitiva;POP_TN_24_MALE;Mal�;1;1;2021;2021
 Lazio;Rieti;Poggio Nativo;in esecuzione;in progettazione definitiva;POP_RI_05_POGGIO_NATIVO;Poggio Nativo;1;1;2022;2020
@@ -7307,7 +7307,7 @@ Piemonte;Vercelli;San Giacomo Vercellese;terminato;in progettazione definitiva;P
 Lombardia;Varese;Maccagno con Pino e Veddasca;in esecuzione;in progettazione esecutiva;POP_VA_12_MACCAGNO_CON_PINO_E_VEDDASCA;Maccagno con Pino e Veddasca;1;1;2021;2020
 Abruzzo;L'Aquila;Sulmona;in esecuzione;in progettazione esecutiva;POP_AQ_33_SULMONA;Sulmona;1;1;2022;2022
 Sardegna;Oristano;Tresnuraghes;;in collaudo;;;0;1;;2021
-Emilia Romagna;Forl__-Cesena;Gatteo;in programmazione;in progettazione definitiva;;;0;1;;2022
+Emilia Romagna;Forli-Cesena;Gatteo;in programmazione;in progettazione definitiva;;;0;1;;2022
 Liguria;Genova;Campo Ligure;terminato;terminato;POP_GE_34_CAMPO_LIGURE;Campo Ligure;1;1;2022;2022
 Lazio;Roma;Cerveteri;in programmazione;in progettazione esecutiva;;;0;1;;2022
 Piemonte;Torino;Volvera;in programmazione;in progettazione definitiva;;;0;1;;2022
@@ -7411,7 +7411,7 @@ Veneto;Vicenza;Montecchio Precalcino;terminato;in progettazione definitiva;POP_V
 Liguria;La Spezia;Carro;terminato;in progettazione esecutiva;POP_SP_16_CARRO;Carro;1;1;2021;2021
 Lombardia;Varese;Tradate;in programmazione;in progettazione definitiva;;;0;1;;2022
 Piemonte;Asti;Castell'Alfero;in progettazione esecutiva;in progettazione definitiva;POP_AT_41_CASTELL'ALFERO;Castell'Alfero;1;1;2023;2022
-Emilia Romagna;Forl__-Cesena;Mercato Saraceno;in esecuzione;in progettazione esecutiva;POP_FC_02_SOGLIANO AL RUBICONE;Sogliano al Rubicone;1;1;2021;2020
+Emilia Romagna;Forli-Cesena;Mercato Saraceno;in esecuzione;in progettazione esecutiva;POP_FC_02_SOGLIANO AL RUBICONE;Sogliano al Rubicone;1;1;2021;2020
 Veneto;Verona;Roverchiara;lavori chiusi;in progettazione definitiva;POP_VR_32_ROVERCHIARA;Roverchiara;1;1;2023;2022
 Piemonte;Cuneo;Priocca;in collaudo;in progettazione definitiva;POP_CN_74_PRIOCCA;Priocca;1;1;2022;2020
 Lombardia;Bergamo;Strozza;in esecuzione;terminato;POP_BG_54_CAPIZZONE;Capizzone;1;1;2023;2022
@@ -7485,7 +7485,7 @@ Piemonte;Torino;Castagneto Po;in collaudo;terminato;POP_TO_12_SAN_SEBASTIANO_DA_
 Lombardia;Monza e della Brianza;Renate;terminato;in progettazione definitiva;POP_LC_03_CASSAGO_BRIANZA;Cassago Brianza;1;1;2022;2022
 Puglia;Bari;Bitonto;in esecuzione;in progettazione esecutiva;;;1;1;2022;2022
 Calabria;Cosenza;Malito;;in progettazione definitiva;;;0;1;;2022
-Emilia Romagna;Forl__-Cesena;Dovadola;terminato;in programmazione;POP_FC_09_CASTROCARO_TERME;Castrocaro Terme e Terra del Sole;1;0;2020;
+Emilia Romagna;Forli-Cesena;Dovadola;terminato;in programmazione;POP_FC_09_CASTROCARO_TERME;Castrocaro Terme e Terra del Sole;1;0;2020;
 Puglia;Foggia;Casalvecchio di Puglia;lavori chiusi;in progettazione definitiva;;;1;1;2022;2022
 Lazio;Frosinone;San Donato Val di Comino;terminato;in progettazione definitiva;POP_FR_69_SAN_DONATO_VAL_DI_COMINO;San Donato Val di Comino;1;1;2021;2022
 Lombardia;Pavia;Cassolnovo;in progettazione esecutiva;in progettazione definitiva;POP_PV_03_CILAVEGNA;Cilavegna;1;1;2023;2022
@@ -7628,7 +7628,7 @@ Veneto;Vicenza;Thiene;in programmazione;in progettazione esecutiva;;;0;1;;2022
 Lombardia;Bergamo;Bonate Sotto;in progettazione esecutiva;in progettazione definitiva;POP_BG_04_CAPRIATE_SAN_GERVASIO;Capriate San Gervasio;1;1;2022;2022
 Marche;Ancona;Monsano;terminato;in progettazione esecutiva;POP_AN_24_MONSANO;Monsano;1;1;2021;2021
 Piemonte;Asti;Mombercelli;terminato;in progettazione definitiva;POP_AT_33_MOMBERCELLI;Mombercelli;1;1;2021;2022
-Emilia Romagna;Forl__-Cesena;Gambettola;in programmazione;in progettazione definitiva;;;0;1;;2022
+Emilia Romagna;Forli-Cesena;Gambettola;in programmazione;in progettazione definitiva;;;0;1;;2022
 Piemonte;Torino;San Pietro Val Lemina;terminato;in progettazione definitiva;POP_TO_57_SAN_PIETRO_VAL_LEMINA;San Pietro Val Lemina;1;1;2021;2020
 Umbria;Perugia;Cerreto di Spoleto;terminato;in progettazione definitiva;POP_PG_07_CERRETO_DI_SPOLETO;Cerreto di Spoleto;1;1;2020;2020
 Marche;Pesaro e Urbino;Tavoleto;in collaudo;in progettazione definitiva;POP_PU_17_TAVOLETO;Tavoleto;1;1;2022;2022

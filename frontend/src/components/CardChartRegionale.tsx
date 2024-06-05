@@ -1,17 +1,36 @@
-import "./CardChartWithTwoTables.scss";
+import "./CardChartRegionale.scss";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import {calculateCompletedTotals, CategoryTotals} from "../utils/CalculateConstructionStatics";
+import ConstructionStatisticsTable from "./ConstructionStatisticsTable";
 import { CardChartProps } from "../models/CardChartProps";
 import { jsonToDatasetForBarChart } from "../utils/jsonToDataset";
 import { Pie, Bar, Doughnut, Line, Radar, PolarArea, Bubble, Scatter, Chart } from "react-chartjs-2";
-import { ArcElement, ChartData, Filler, LineElement, PointElement } from "chart.js";
+import { ArcElement, ChartData, LineElement, PointElement } from "chart.js";
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 
 // Registrazione dei componenti necessari di Chart.js
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ArcElement, PointElement, LineElement, Filler);
-export default function CardChartWithTwoTables(props: {
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ArcElement, PointElement, LineElement);
+export default function CardChartRegionale(props: {
     readonly cardChartProps : CardChartProps
 }) {
+
+    const optionsCircle = {
+        maintainAspectRatio: false,
+        responsive: true,
+        plugins: {
+            legend: {
+              labels: {
+                  usePointStyle: true,
+                  color: 'white',
+                  font: {
+                      size: 16
+                  }
+              }
+            }
+        }
+    }
+
     const options = {
         maintainAspectRatio: false,
         responsive: true,
@@ -29,7 +48,7 @@ export default function CardChartWithTwoTables(props: {
         scales : {
             x: {
                 grid: {
-                    color: 'rgba(251, 255, 241, 0.4)', // Cambia il colore delle righe verticali
+                    color: 'rgba(251, 255, 241, 0.4)',
                 },
                 ticks: {
                     color: 'rgba(251, 255, 241, 0.4)'
@@ -37,7 +56,7 @@ export default function CardChartWithTwoTables(props: {
             },
             y: {
                 grid: {
-                    color: 'rgba(251, 255, 241, 0.4)', // Cambia il colore delle righe orizzontali
+                    color: 'rgba(251, 255, 241, 0.4)',
                 },
                 ticks: {
                     color: 'rgba(251, 255, 241, 0.4)'
@@ -46,42 +65,28 @@ export default function CardChartWithTwoTables(props: {
         }
     };
 
-    const optionsCircle = {
-        maintainAspectRatio: false,
-        responsive: true,
-        plugins: {
-            legend: {
-              labels: {
-                  usePointStyle: true,
-                  color: 'white',
-                  font: {
-                      size: 16
-                  }
-              }
-            }
-        }
-    }
-    console.log("dio porcone")
     const cardChartProps = props.cardChartProps;
-    const { title, text, url, firstChartAllowedType, firstChartallowMoreHeight, } = cardChartProps;
+    const { title, text, littleTable, url, firstChartAllowedType, secondChartAllowedType, firstChartallowMoreHeight, secondChartallowMoreHeight, region} = cardChartProps;
     const [dataFisrtChart, setDataFisrtChart] = useState<any>({});
     const [loading, setLoading] = useState<boolean>(true);
+    const [stastics, setStastics] = useState<CategoryTotals>();
     const [firstComponent, setFirstComponent] = useState<React.JSX.Element | null>(null);
-    const [firstTableData, setFirstTableData] = useState<any>(null);
-    const [secondTableData, setSecondTableData] = useState<any>(null);
-
+    const [typeChart, setTypeChart] = useState<string>(firstChartAllowedType[0])
+    const [year, setYear] = useState<string|null>(null)
 
     useEffect(() => {
-        axios.get(url).then(response => {
-            console.log("chiamo il porco di dio")
+        const urlRegion = url+region
+        axios.get(urlRegion).then(response => {
             if (response.status === 200) {
                 const data = response.data;
+                console.log(data)
                 const keys = Object.keys(data)
-
+                console.log(keys)
                 setDataFisrtChart(jsonToDatasetForBarChart(data[keys[0]]));
-                setFirstTableData(data[keys[1]]["fibra"])
-                setSecondTableData(data[keys[1]]["fwa"])
                 setLoading(false);
+                if (littleTable) {
+                    setStastics(calculateCompletedTotals(data));
+                }
             } else {
                 console.error("Errore nella chiamata AJAX:", response.status);
             }
@@ -90,12 +95,13 @@ export default function CardChartWithTwoTables(props: {
         }).finally(() => {
             
         });
-    }, [url]);
+    }, [url, region]);
 
     useEffect(() => {
-        console.log("mi ridisegno dio cane")
-        handleChangeChartType(firstChartAllowedType[1])
-    }, [dataFisrtChart,loading])
+        if (!loading && dataFisrtChart && dataFisrtChart.labels) {
+            handleChangeChartType(firstChartAllowedType[0]);
+        }
+    }, [loading, dataFisrtChart]);
 
     function handleChangeChartType(type: string) {
         if (!dataFisrtChart || !dataFisrtChart.labels) {
@@ -103,27 +109,25 @@ export default function CardChartWithTwoTables(props: {
             return;
         }
 
-        let data;
-        data = dataFisrtChart
-
         switch (type) {
+            
             case "bar chart":
-                setFirstComponent(<Bar data={data} options={options}/>);
+                setFirstComponent(<Bar data={dataFisrtChart} options={options} />);
                 break;
             case "pie":
-                setFirstComponent(<Pie data={data} options={optionsCircle}/>);
+                setFirstComponent(<Pie data={dataFisrtChart} options={optionsCircle}/>);
                 break;
             case "line":
-                console.log(data)
-                setFirstComponent(<Line data={data} options={options}/>);
+                setFirstComponent(<Line data={dataFisrtChart} options={options}/>);
                 break;
             case "doughnut":
-                setFirstComponent(<Doughnut data={data} options={optionsCircle}/>);
+                setFirstComponent(<Doughnut data={dataFisrtChart} options={optionsCircle}/>);
                 break;
             default:
                 setFirstComponent(null);
                 break;
         }
+        setTypeChart(type)
     }
 
     return (
@@ -134,6 +138,11 @@ export default function CardChartWithTwoTables(props: {
                 <div className="card-chart-undertitle">
                     <p className="card-chart-subtext">{text}</p>
                     <div className="card-chart-space"></div>
+                    <div className="card-chart-table">
+                        {littleTable && stastics && (
+                            <ConstructionStatisticsTable totals={stastics} />
+                        )}
+                    </div>
                 </div>
             </div> 
             <div className="card-chart-chart-container">
@@ -141,17 +150,14 @@ export default function CardChartWithTwoTables(props: {
                     {!loading && (
                         <>
                             <div className={firstChartallowMoreHeight? "high": ""}>
+                                <select className="card-chart-select" value={typeChart} onChange={ e => {
+                                    handleChangeChartType(e.target.value)
+                                    }}>
+                                    {firstChartAllowedType.map( x => <option value={x}>{x}</option>)}
+                                </select>
                                 {firstComponent != null && firstComponent}
                             </div>
-                            <div className="table-container">
-                                <p>Fibra</p>
-                                {firstTableData && <TableComponent data={firstTableData} />}
-                            </div>
-                            <div className="table-container">
-                                <p>FWA</p>
-                                {secondTableData && <TableComponent data={secondTableData} />}
-                                
-                            </div>
+                            
                         </>
                     )}
                 </div>
@@ -162,36 +168,12 @@ export default function CardChartWithTwoTables(props: {
         
     );
 }
-
-interface Incremento {
-    Incremento: number;
-    Valori: number;
-  }
-  
-  interface Data {
-    [year: string]: Incremento;
-  }
-  
-  const TableComponent: React.FC<{ data: Data }> = ({ data }) => {
-    return (
-      <table className="table">
-        <thead>
-          <tr className="horizzontal-line">
-            <th className="year-column">Anno</th>
-            <th>Valori</th>
-            <th>Incremento %</th>
-          </tr>
-        </thead>
-        <tbody className="table-body">
-          {Object.keys(data).map((year) => (
-            <tr key={year}>
-              <td className="year-column">{year}</td>
-              <td className="number-column">{data[year].Valori}</td>
-              <td className="number-column">{data[year].Incremento.toFixed(2)}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    );
-  };
-  
+/*
+<div className={secondChartallowMoreHeight? "high": ""}>
+                                <select className="card-chart-select" defaultValue={secondChartAllowedType[0]} onChange={ e => {
+                                    handleChangeChartType(e.target.value,1)
+                                    }}>
+                                    {secondChartAllowedType.map( x => <option value={x}>{x}</option>)}
+                                </select>
+                                {secondComponent != null && secondComponent}
+                            </div>*/

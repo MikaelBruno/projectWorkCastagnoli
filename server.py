@@ -5,13 +5,13 @@ from flask import Flask, jsonify
 from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
-df = pd.read_csv(r'ProgettoBul\stato_lavori.csv', sep=';', encoding='UTF-8')
+df = pd.read_csv(r'ProgettoBul/stato_lavori.csv', sep=';', encoding='UTF-8')
 df['Piano fibra (anno)'] = df['Piano fibra (anno)'].fillna(0)
 df['Piano FWA (anno)'] = df['Piano FWA (anno)'].fillna(0)
 df['Piano fibra (anno)'] = df['Piano fibra (anno)'].astype('int64')
 df['Piano FWA (anno)'] = df['Piano FWA (anno)'].astype('int64')
-df['Regione'].str.lower()
- 
+df_pcn =  pd.read_csv(r'ProgettoBul/pcn_route.csv', sep=';', encoding='UTF-8')
+
 str_prog = 'in programmazione|in progettazione' # In progettazione
 str_esec = 'in esecuzione' # In esecuzione
 str_term = 'terminato|lavori chiusi|in collaudo' # Terminato
@@ -129,6 +129,39 @@ def get_fwa_construction_site_region(region:str,year:str):
     
     res = jsonify({
         "FWA" : {'In progettazione': in_progettazione, 'In esecuzione': in_esecuzione, 'Terminati': terminati}
+    })
+    
+    return res
+
+@app.route('/fiber-construction-site/<region>/<year>', methods=['GET'])
+def get_fiber_construction_site_region(region:str,year:str):
+    df_region = df[df['Regione'] == region]
+    
+    if year == "Tutti" :
+        terminati = df_region[(df_region['Stato Fibra'].str.contains(str_term, na=False)) & (df_region['Fibra'] != 0)]['Provincia'].value_counts().sort_index().fillna(0).to_dict()
+        in_esecuzione = df_region[(df_region['Stato Fibra'].str.contains(str_esec, na=False)) & (df_region['Fibra'] != 0)]['Provincia'].value_counts().sort_index().fillna(0).to_dict()
+        in_progettazione = df_region[(df_region['Stato Fibra'].str.contains(str_prog, na=False)) & (df_region['Fibra'] != 0)]['Provincia'].value_counts().sort_index().fillna(0).to_dict()
+    
+    else: 
+        year = int(year)
+        terminati = df_region[(df_region['Stato Fibra'].str.contains(str_term, na=False)) & (df_region['Fibra'] != 0) & (df_region['Piano fibra (anno)'] == year)]['Provincia'].value_counts().sort_index().fillna(0).to_dict()
+        in_esecuzione = df_region[(df_region['Stato Fibra'].str.contains(str_esec, na=False)) & (df_region['Fibra'] != 0) & (df_region['Piano fibra (anno)'] == year)]['Provincia'].value_counts().sort_index().fillna(0).to_dict()
+        in_progettazione = df_region[(df_region['Stato Fibra'].str.contains(str_prog, na=False)) & (df_region['Fibra'] != 0) & (df_region['Piano fibra (anno)'] == year)]['Provincia'].value_counts().sort_index().fillna(0).to_dict()
+    
+    res = jsonify({
+        "FWA" : {'In progettazione': in_progettazione, 'In esecuzione': in_esecuzione, 'Terminati': terminati}
+    })
+    
+    return res
+
+@app.route('/pcn/<region>/Tutti', methods = ["GET"])
+def get_pcn_by_region(region:str):
+    df_region = df_pcn[df_pcn['Regione'] == region]
+    pcn_by_province = df_region["Provincia"].value_counts().sort_index().fillna(0).to_dict()
+    
+    res = jsonify({
+        "PCN" : {"PCN" : pcn_by_province}
+        
     })
     
     return res

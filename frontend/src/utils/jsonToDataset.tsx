@@ -1,7 +1,4 @@
-import { stringify } from "querystring";
-import ChartDataDTO from "../models/ChartDataDTO";
 export default function jsonToDatasetForBarChart(data: Record<string, Record<string, number | null >>) {
-
     const labelSet = new Set<string>();
     Object.values(data).forEach((innerObj) => {
         Object.keys(innerObj).forEach((key) => {
@@ -43,9 +40,6 @@ export default function jsonToDatasetForBarChart(data: Record<string, Record<str
         datasets
     };
 };
-
-
-
 
 const getColor = (index: number) => {
     const colors = [

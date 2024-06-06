@@ -72,7 +72,11 @@ export default function CardChartRegionale(props: {
     const [stastics, setStastics] = useState<CategoryTotals>();
     const [firstComponent, setFirstComponent] = useState<React.JSX.Element | null>(null);
     const [typeChart, setTypeChart] = useState<string>(firstChartAllowedType[0])
-    const [year, setYear] = useState<string>(years != undefined ? years[0] : "tutti")
+    const [year, setYear] = useState<string>(years != undefined ? years[0] : "Tutti")
+
+    useEffect(() => {
+        setYear(years != undefined ? years[0] : "Tutti");
+      }, [region, years]);
 
     useEffect(() => {
         const urlRegion =  `${url+region}\\${year}`

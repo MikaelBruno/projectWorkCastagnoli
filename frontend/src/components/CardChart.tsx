@@ -75,6 +75,8 @@ export default function CardChart(props: {
     const [stastics, setStastics] = useState<CategoryTotals>();
     const [firstComponent, setFirstComponent] = useState<React.JSX.Element | null>(null);
     const [secondComponent, setSecondComponent] = useState<React.JSX.Element | null>(null);
+    const [chartTypeFirstChart, setchartTypeFirstChart] = useState<string> (firstChartAllowedType[0])
+    const [chartTypeSecondChart, setchartTypeSecondChart] = useState<string> (secondChartAllowedType[0])
 
 
     useEffect(() => {
@@ -117,12 +119,14 @@ export default function CardChart(props: {
         if (chart === 0) {
             setComponent = setFirstComponent
             data = dataFisrtChart
+            setchartTypeFirstChart(type)
         } else if (chart === 1) {
             setComponent = setSecondComponent
             data = dataSecondChart
+            setchartTypeSecondChart(type)
         }
 
-        if (!setComponent) {
+        if (!setComponent || !setchartTypeSecondChart) {
             return;
         }
 
@@ -144,6 +148,7 @@ export default function CardChart(props: {
                 setComponent(null);
                 break;
         }
+
     }
 
     return (
@@ -166,7 +171,7 @@ export default function CardChart(props: {
                     {!loading && (
                         <>
                             <div className={firstChartallowMoreHeight? "high": ""}>
-                                <select className="card-chart-select" defaultValue={firstChartAllowedType[0]} onChange={ e => {
+                                <select className="card-chart-select" value={chartTypeFirstChart} onChange={ e => {
                                     handleChangeChartType(e.target.value,0)
                                     }}>
                                     {firstChartAllowedType.map( x => <option value={x}>{x}</option>)}
@@ -174,7 +179,7 @@ export default function CardChart(props: {
                                 {firstComponent != null && firstComponent}
                             </div>
                             <div className={secondChartallowMoreHeight? "high": ""}>
-                                <select className="card-chart-select" defaultValue={secondChartAllowedType[0]} onChange={ e => {
+                                <select className="card-chart-select" value={chartTypeSecondChart} onChange={ e => {
                                     handleChangeChartType(e.target.value,1)
                                     }}>
                                     {secondChartAllowedType.map( x => <option value={x}>{x}</option>)}

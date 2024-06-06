@@ -15,7 +15,7 @@ export default function CardSwitchRegionale(props: {
     selectRegionale: string;
     options: string[];
 }) {
-    const { arrayString, callBack, Select, options, callBackRegionale} = props;
+    const { arrayString, callBack, Select, options, callBackRegionale, selectRegionale} = props;
     const [selected, setSelected] = useState(Select);
 
     const handleItemClick = (item:string) => {
@@ -28,7 +28,7 @@ export default function CardSwitchRegionale(props: {
         <div className="card-switch">
             <ul>
                 <li>
-                    <SelectWithSearch options= {options} onOptionSelect={(x) => callBackRegionale(x)}/>
+                    <SelectWithSearch options= {options} onOptionSelect={(x) => callBackRegionale(x)} selected={selectRegionale}/>
                 </li>
                 {arrayString.map((item, index) => (
                     <li

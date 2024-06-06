@@ -5,11 +5,12 @@ import { ChevronDown, ChevronUp } from "react-feather";
 export default function SelectWithSearch(props: {
   options: string[];
   onOptionSelect: (value: string) => void;
+  selected: string;
 }) {
-  const { options, onOptionSelect } = props;
+  const { options, onOptionSelect, selected } = props;
   const [originalOptions, setOriginalOptions] = useState<string[]>(options);
-  const [selectedOption, setSelectedOption] = useState<string>(originalOptions[0]);
-  const [filteredOptions, setFilteredOptions] = useState<string[]>(originalOptions.filter(option => option !== originalOptions[0]));
+  const [selectedOption, setSelectedOption] = useState<string>(selected);
+  const [filteredOptions, setFilteredOptions] = useState<string[]>(originalOptions.filter(option => option !== selectedOption));
 
   const [isOpen, setIsOpen] = useState(false);
   const toggleDropdown = () => {

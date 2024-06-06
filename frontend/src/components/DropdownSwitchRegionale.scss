@@ -28,11 +28,11 @@ $scrollbar-thumb-hover-color: #666A75;
     }
 }
 
-.dropdown {
+.dropdown-regionale {
     box-shadow: 0 4px 3px 1px rgba(0, 0, 0, 0.3);
     position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 80%;
     margin-top: 20px;
     margin-left: 10%;
@@ -41,6 +41,7 @@ $scrollbar-thumb-hover-color: #666A75;
     background-color: $background-color;
     border-radius: 0px 50px 10px 50px;
     color: $font-color;
+    
 
     &.open {
         border-radius: 0px 50px 0px 0px; // Cambia il border-radius quando il dropdown è aperto
@@ -50,13 +51,13 @@ $scrollbar-thumb-hover-color: #666A75;
         }
     }
     .custom-dropdown-regionale {
-        
+        padding-top: 8px;
+        padding-bottom: 8px;
         display: flex;
         width: 50%;
-        justify-content: center;
-        align-items: center;
         font-size: 24px;
         margin-left: 5%;
+        
 
         .input-regionale{
             height: 35px;
@@ -68,21 +69,23 @@ $scrollbar-thumb-hover-color: #666A75;
             margin-top: 20px;
             list-style: none;
             display: block;
-            width: 88%;
+            width: 83%;
             top: calc(100% - 20px);
             position: absolute;
-            background-color: $background-color;
+            background-color:$background-color;
             box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
             z-index: 1;
             transition: max-height 0.3s ease, opacity 0.3s ease;
-            border-radius: 0px 50px 10px 50px;
-            border: 1px solid $selected-color;
+            border-radius: 10px 50px 10px 50px;
+            border: $selected-color;
             padding-top: 6px;
             left: 0;
             padding-right: 10px;
             font-size: 20px;
             max-height: 30vh;
             overflow-y: auto;
+
+
             &::-webkit-scrollbar {
                 width: 4px;
             }
@@ -100,6 +103,14 @@ $scrollbar-thumb-hover-color: #666A75;
             &::-webkit-scrollbar-thumb:hover {
                 background-color: $scrollbar-thumb-hover-color;
             }
+
+            li {
+                padding: 10px; // Aggiungi padding agli elementi della lista per migliorare l'interattività
+                &:hover {
+                    background-color: $selected-color; // Sostituisci con il colore di sfondo desiderato
+                    color: $background-color;
+                }
+            }
         }
 
        
@@ -112,6 +123,7 @@ $scrollbar-thumb-hover-color: #666A75;
         cursor: pointer;
         width: 40%;
         text-align: center;
+        align-self:center;
         @media (max-width: 400px) {
             font-size: 20px;
         }

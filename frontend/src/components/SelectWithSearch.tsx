@@ -56,7 +56,7 @@ export default function SelectWithSearch(props: {
             placeholder="Search..."
           />
           {filteredOptions.map((option, index) => (
-            <li onClick={() => handleOptionSelected(option)} key={index}>{option}</li>
+            <li onClick={() => handleOptionSelected(option)} key={index}>{option.length > 12 ? `${option.slice(0, 12)}...` : option}</li>
           ))}
         </ul>
       )}

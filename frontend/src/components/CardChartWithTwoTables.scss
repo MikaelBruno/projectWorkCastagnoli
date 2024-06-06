@@ -51,7 +51,7 @@ $table-background : #3C6669;
         color: $font-color;
         border: 1px solid $scrollbar-thumb-color;
         border-radius: 4px;
-        padding: 4px;
+        padding: 8px;
         font-size: 16px;
         cursor: pointer;
         margin: 8px 0;
@@ -69,17 +69,9 @@ $table-background : #3C6669;
         option {
             background-color: $background-color;
             color: $font-color;
+            padding: 16px;
         }
     
-        @media (max-width: 768px) {
-            font-size: 14px;
-            padding: 4px;
-        }
-    
-        @media (max-width: 576px) {
-            font-size: 12px;
-            padding: 4px;
-        }
     }
 
     .card-chart-title {
@@ -218,5 +210,15 @@ $table-background : #3C6669;
     .horizzontal-line {
         border-bottom: 1px solid white; // Aggiunge una riga bianca sotto ciascuna cella dell'intestazione
         padding-bottom: 5px;
+    }
+
+    @media (max-height: 720px) {
+        max-height: 55vh;
+    
+        .card-chart-chart-container {
+            .card-chart-chart {
+                max-height: 45vh; // Cambia la max-height quando la viewport è sotto i 680px di altezza
+            }
+        }
     }
 }

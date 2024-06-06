@@ -17,7 +17,6 @@ export default function DropdownSwitchRegionale(props: {
     const dropdownRef = useRef<HTMLDivElement>(null);
     const dropdownRegionaleRef = useRef<HTMLDivElement>(null)
     const [selectedRegionale, setSelectedRegionale] = useState<string>(selectRegionale)
-    const [filteredOption, setFilteredOption] = useState<string[]>(options)
     const [originalOptions, setOriginalOptions] = useState<string[]>(options)
     const [filteredOptions, setFilteredOptions] = useState<string[]>(originalOptions.filter(option => option !== selectedRegionale));
 
@@ -63,7 +62,7 @@ export default function DropdownSwitchRegionale(props: {
         const filtered = options.filter((option) =>
           option.toLowerCase().includes(value.toLowerCase()) 
         );
-        setFilteredOption(filtered);
+        setFilteredOptions(filtered);
       };
 
     useEffect(() => {
@@ -90,7 +89,7 @@ export default function DropdownSwitchRegionale(props: {
     }, [isOpenRegional]);
 
     return (
-        <div className={`dropdown ${isOpen ? 'open' : ''}`} ref={dropdownRef}>
+        <div className={`dropdown-regionale ${isOpen ? 'open' : ''}`} ref={dropdownRef}>
             <div className="custom-dropdown-regionale" ref= {dropdownRegionaleRef}>
               <div className="dropdown-header-regionale" onClick={toggleDropdownRegionale}>
                 {selectedRegionale.length > 6 && selectedRegionale.length > 9? `${selectedRegionale.slice(0, 6)}...` : selectedRegionale} {isOpen? <ChevronUp /> :<ChevronDown alignmentBaseline="central" />}      

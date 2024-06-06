@@ -14,7 +14,7 @@ $scrollbar-thumb-hover-color: #666A75;
 
 .card-chart {
     box-shadow: 0 8px 3px 1px rgba(0, 0, 0, 0.3);
-    max-height: 67vh;
+    max-height: 62vh;
     width: 80%;
     margin-top: 24px;
     background-color: $background-color;
@@ -68,16 +68,7 @@ $scrollbar-thumb-hover-color: #666A75;
         option {
             background-color: $background-color;
             color: $font-color;
-        }
-    
-        @media (max-width: 768px) {
-            font-size: 14px;
-            padding: 4px;
-        }
-    
-        @media (max-width: 576px) {
-            font-size: 12px;
-            padding: 4px;
+            padding: 16px;
         }
     }
 
@@ -162,6 +153,16 @@ $scrollbar-thumb-hover-color: #666A75;
                     width: 100%;
                     height: 300px;
                 }
+            }
+        }
+    }
+
+    @media (max-height: 720px) {
+        max-height: 55vh;
+    
+        .card-chart-chart-container {
+            .card-chart-chart {
+                max-height: 45vh; // Cambia la max-height quando la viewport è sotto i 680px di altezza
             }
         }
     }

@@ -1,0 +1,60 @@
+$background-color: #1F2126;
+$font-color: #CADCE0;
+$selected-color: #37C0C5;
+$font-hover-color: #ddd;
+
+
+.card-switch-regions {
+    box-shadow: 0 4px 3px 1px rgba(0, 0, 0, 0.3);
+    margin-top: 24px;
+    height: 64px;
+    width: 80%;
+    margin-left: 10%;
+    background-color: $background-color;
+    border-radius: 0px 50px 10px 50px;
+    display: flex;             
+    align-items: center;       
+    justify-content: space-evenly;   
+
+    ul {
+        display: flex;
+        color: $font-color;
+        padding-left: 0px;
+        justify-content: space-evenly;
+        font-size: 24px;
+        width: 100%;           
+        align-items: center;   
+        margin: 0;             
+
+        li {
+            list-style: none;
+            cursor: pointer;
+            &:hover:not(.selected) {
+                color: $font-hover-color;
+            }
+        }
+
+
+        .selected {
+            color: $selected-color;
+        }
+    }
+
+    @media (max-width: 992px) {
+        ul {
+            li {
+                font-size: 20px;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        margin-left: 2.5%;
+        width: 95%;
+        ul {
+            li {
+                font-size: 18px;
+            }
+        }
+    }
+}

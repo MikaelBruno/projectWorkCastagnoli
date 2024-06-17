@@ -5,11 +5,13 @@ import VerticaBarChart from './components/VerticalBarChart';
 import Navbar from './components/Navbar';
 import Nazionale from './pages/Nazionale';
 import Regionale from "./pages/Regionale"
+import Home from './pages/home';
+import Confronto from './pages/confronto';
 
-
+const Homepage: React.FC = () => <><Home/></>
 const National: React.FC = () => <><Nazionale /></>;
 const Regional: React.FC = () => <><Regionale /></>;
-const Comparazione: React.FC = () => <div></div>;
+const Comparazione: React.FC = () => <><Confronto/></>;
 
 
 function App() {
@@ -18,7 +20,8 @@ function App() {
     <Router>
             <Navbar />
             <Routes>
-                <Route path="/" element={<National />} />
+                <Route path="/" element={<Homepage />} />
+                <Route path="/nazionale" element={<National />} />
                 <Route path="/regionale" element={<Regional />} />
                 <Route path="/confronto" element={<Comparazione />} />
             </Routes>

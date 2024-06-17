@@ -11,11 +11,13 @@ export default function DropdownSwitch(props: {
     const [selected, setSelected] = useState(Select);
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
+    const [filtereArrayString, setFilteredArrayString] = useState<string[]>(arrayString.filter( x => x != selected))
 
     const handleItemClick = (item: string) => {
         setSelected(item);
         callBack(item);
         setIsOpen(false);
+        setFilteredArrayString(arrayString.filter( x => x != item))
     };
 
     const toggleDropdown = () => {
@@ -45,7 +47,7 @@ export default function DropdownSwitch(props: {
             <div className="dropbtn" onClick={toggleDropdown}>{selected}</div>
             {isOpen && (
                 <div className="dropdown-content">
-                    {arrayString.map((item, index) => (
+                    {filtereArrayString.map((item, index) => (
                         <div
                             key={index}
                             className="dropdown-item"

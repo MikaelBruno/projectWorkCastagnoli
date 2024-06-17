@@ -161,10 +161,51 @@ def get_pcn_by_region(region:str):
     
     res = jsonify({
         "PCN" : {"PCN" : pcn_by_province}
-        
     })
     
     return res
 
+def get_fiber_data(df, region, year, str_term, str_esec, str_prog, technology):
+    df_region = df[df['Regione'] == region]
+    
+    if year == "Tutti":
+        terminati = df_region[(df_region[technology].str.contains(str_term, na=False)) & (df_region['Fibra'] != 0)].shape[0]
+        in_esecuzione = df_region[(df_region[technology].str.contains(str_esec, na=False)) & (df_region['Fibra'] != 0)].shape[0]
+        in_progettazione = df_region[(df_region[technology].str.contains(str_prog, na=False)) & (df_region['Fibra'] != 0)].shape[0]
+    else:
+        year = int(year)
+        terminati = df_region[(df_region[technology].str.contains(str_term, na=False)) & (df_region['Fibra'] != 0) & (df_region['Piano fibra (anno)'] == year)].shape[0]
+        in_esecuzione = df_region[(df_region[technology].str.contains(str_esec, na=False)) & (df_region['Fibra'] != 0) & (df_region['Piano fibra (anno)'] == year)].shape[0]
+        in_progettazione = df_region[(df_region[technology].str.contains(str_prog, na=False)) & (df_region['Fibra'] != 0) & (df_region['Piano fibra (anno)'] == year)].shape[0]
+
+    return {
+        "terminati": terminati,
+        "in esecuzione": in_esecuzione,
+        "in progettazione": in_progettazione
+    }
+
+@app.route('/comparison/<region1>/<region2>/<year>/<technology>', methods=["GET"])
+def get_fiber_construction_site_of_two_regions(region1: str, region2: str, year: str, technology:str):
+    data_region1 = get_fiber_data(df, region1, year, str_term, str_esec, str_prog, technology)
+    data_region2 = get_fiber_data(df, region2, year, str_term, str_esec, str_prog, technology)
+
+    return jsonify({
+        region1: data_region1,
+        region2: data_region2
+    })   
+    
+    
+@app.route('/comparison/<region1>/<region2>/pcn', methods=["GET"])
+def get_pcn_site_of_two_region(region1: str, region2: str):  
+    pcn_count_region1 = df_pcn[df_pcn['Regione'] == region1]['Regione'].value_counts().to_dict()
+    pcn_count_region2 = df_pcn[df_pcn['Regione'] == region2]['Regione'].value_counts().to_dict()
+    
+    return jsonify({
+        region1: pcn_count_region1,
+        region2: pcn_count_region2
+    })  
+
 if __name__ == '__main__':
     app.run(debug=True)
+    
+    

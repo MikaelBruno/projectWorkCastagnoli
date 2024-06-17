@@ -46,6 +46,15 @@ export default function Navbar() {
                         className={currentPath === '/' ? 'selected' : ''}
                         onClick={() => setMenuOpen(false)}
                     >
+                        Home
+                    </Link>
+                </li>
+                <li>
+                    <Link 
+                        to="/nazionale" 
+                        className={currentPath === '/nazionale' ? 'selected' : ''}
+                        onClick={() => setMenuOpen(false)}
+                    >
                         Nazionale
                     </Link>
                 </li>    

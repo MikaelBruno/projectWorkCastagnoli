@@ -1,18 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./SelectWithSearch.scss";
 import { ChevronDown, ChevronUp } from "react-feather";
 
-export default function SelectWithSearch(props: {
+interface Props {
   options: string[];
   onOptionSelect: (value: string) => void;
   selected: string;
-}) {
-  const { options, onOptionSelect, selected } = props;
+}
+
+const SelectWithSearch: React.FC<Props> = ({ options, onOptionSelect, selected }) => {
   const [originalOptions, setOriginalOptions] = useState<string[]>(options);
   const [selectedOption, setSelectedOption] = useState<string>(selected);
-  const [filteredOptions, setFilteredOptions] = useState<string[]>(originalOptions.filter(option => option !== selectedOption));
+  const [filteredOptions, setFilteredOptions] = useState<string[]>(options.filter(option => option !== selectedOption));
 
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null); // Riferimento al nodo del dropdown
+
+  console.log("mi ridisegno")
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
@@ -23,16 +27,28 @@ export default function SelectWithSearch(props: {
     setFilteredOptions(options.filter(option => option !== selectedOption));
   }, [options]);
 
-  function filterCurrentSelectFromList(value:string) {
-    return originalOptions.filter((option) => option !== value);
-  }
+  useEffect(() => {
+    // Aggiungi un event listener globale per chiudere il dropdown se clicchi fuori da esso
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  // Funzione per gestire il clic fuori dal dropdown
+  const handleClickOutside = (event: MouseEvent) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      setIsOpen(false);
+    }
+  };
 
   const handleOptionSelected = (value:string) => {
-    setSelectedOption(value)
-    setIsOpen(!isOpen);
-    onOptionSelect(value)
+    setSelectedOption(value);
+    setIsOpen(false);
+    onOptionSelect(value);
     setFilteredOptions(originalOptions.filter(option => option !== value));
-  }
+  };
 
   const handleFilteredList = (value: string) => {
     const filtered = originalOptions.filter((option) =>
@@ -42,7 +58,7 @@ export default function SelectWithSearch(props: {
   };
 
   return (
-    <div className="custom-dropdown">
+    <div className="custom-dropdown" ref={dropdownRef}>
       <div className="dropdown-header" onClick={toggleDropdown}>
         {selectedOption.length > 9 && selectedOption.length > 12 ? `${selectedOption.slice(0, 9)}...` : selectedOption} {isOpen? <ChevronUp /> :<ChevronDown alignmentBaseline="central" />}      
       </div>
@@ -62,4 +78,6 @@ export default function SelectWithSearch(props: {
       )}
     </div>
   );
-}
+};
+
+export default SelectWithSearch;

@@ -3,3 +3,4 @@ Lib/
 **/temp/
 *.log
 frontend/node_modules
+venv/

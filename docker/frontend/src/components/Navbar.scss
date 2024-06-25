@@ -1,0 +1,159 @@
+$navbar-bg-color: #1F2126;
+$navbar-text-color: #CADCE0;
+$navbar-hover-color: #ddd;
+$navbar-selected-color: #37C0C5;
+
+.navbar {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    background-color: $navbar-bg-color;
+    padding-left: 10%;
+    position: relative; // For positioning the hamburger icon
+    justify-content: space-between; // Aggiungere spazio tra gli elementi
+    padding-right: 10%;
+    transition: height 0.2s ease-in-out;
+
+    &-links {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: flex;
+            align-items: center;
+
+            a {
+                color: $navbar-text-color;
+                text-decoration: none;
+                font-size: 26px;
+                transition: font-size 0.2s, color 0.2s;
+                display: flex;
+                align-items: center;
+                height: 100%;
+
+                &:hover {
+                    color: $navbar-hover-color;
+                }
+
+                &.selected {
+                    font-size: 32px;
+                    color: $navbar-selected-color;
+                }
+            }
+        }
+    }
+
+    .hamburger {
+        position: absolute;
+        display: none;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 30px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 10;
+        right: 10%;
+        padding: 0;
+
+        div {
+            width: 30px;
+            height: 3px;
+            background: $navbar-selected-color;
+            border-radius: 10px;
+            transition: all 0.3s linear;
+            position: relative;
+            &.line1 {
+                transform: translateY(-50%);
+            }
+
+            &.line2 {
+                transform: translateY(0);
+            }
+
+            &.line3 {
+                transform: translateY(50%);
+            }
+        }
+    }
+
+     &.active {
+        .hamburger {
+            div {
+                &.line1 {
+                    transform:  translateY(300%) rotate(45deg);
+                }
+
+                &.line2 {
+                    opacity: 0;
+                }
+
+                &.line3 {
+                    transform: translateY(-350%) rotate(-45deg);
+                }
+            }
+        }
+    }
+
+    @media (max-width: 640px) {
+        padding-left: 0;
+        height: 60px;
+        .navbar-links {
+            flex-direction: column;
+            gap: 0;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            background-color: $navbar-bg-color;
+            transform: translateX(-100%);
+            transition: height 0.2s ease-in-out;
+            
+            z-index: 10;
+
+            &.active {
+                transform: translateX(0);
+            }
+
+            li {
+                justify-content: center;
+                width: 100%;
+                padding: 0;
+
+                a {
+                    font-size: 24px;
+                    width: 100%; // Make the link occupy the full width
+                    padding: 1rem 0; // Add padding to the link instead
+                    text-align: center; // Center the text
+                    display: block; // Make the link a block element to take full width
+                }
+            }
+        }
+
+        .hamburger {
+            display: flex;
+        }
+    }
+
+
+}
+
+.navbar-line {
+    top: 60px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px; // Imposta lo spessore della riga
+    background-color: $navbar-selected-color; // Colore della riga
+    box-shadow: 0 4px 3px 1px rgba(0, 0, 0, 0.3); // Aggiungi l'ombra qui
+    transition: top 0.2s ease-in-out;
+    @media (max-width: 576px) {
+        top: 60px;
+        
+    }
+}

@@ -100,6 +100,17 @@ $scrollbar-thumb-hover-color: #666A75;
 
     .chart {
         max-height: 400px;
+        overflow: hidden; /* Assicurati che il contenuto non trabocchi */
+        animation: stretch 1s ease-out; /* Applica l'animazione */
+    }
+    
+    @keyframes stretch {
+        from {
+            max-height: 0;
+        }
+        to {
+            max-height: 400px;
+        }
     }
 
 }

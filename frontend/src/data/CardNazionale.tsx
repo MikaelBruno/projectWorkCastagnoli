@@ -18,7 +18,7 @@ import { CardChartProps } from "../models/CardChartProps"
       title: "Copertura fibra ottica e FWA in Italia",
       littleTable: false,
       url: "http://127.0.0.1:5000/coverage/italy",
-      text: "In questo punto dai due grafici possiamo vedere la presenza delle due tecnologie a livello nazionale, mentre nell’altro grafico abbiamo i cantieri chiusi o in fase finale di collaudo per regione",
+      text: "In questo punto dal primo grafico a torta possiamo vedere la presenza delle due tecnologie a livello nazionale, mentre nel secondo grafico abbiamo i cantieri chiusi o in fase finale di collaudo per regione",
       firstChartAllowedType : ["pie", "doughnut"],
       secondChartAllowedType : ["bar chart", "line"],
       secondChartallowMoreHeight : true

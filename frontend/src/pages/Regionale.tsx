@@ -77,6 +77,6 @@ export default function Nazionale() {
         /*
         title="Stato generale cantieri fibra ottica e FWA in Italia"  ,
         littleTable={true},
-        url="http://127.0.0.1:5000/construction-site/italy",
+        url="http://app:5000/construction-site/italy",
         text="Il primo grafico rappresenta lo stato dei cantieri relativi alla fibra ottica nel corso degli anni, suddivisi tra in esecuzione, in progettazione e completati. Il secondo grafico segue lo stesso principio, ma focalizzato sulla tecnologia FWA wireless ultraveloce."
         */

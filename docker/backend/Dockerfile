@@ -6,10 +6,8 @@ COPY requirements.txt .
 
 RUN python -m venv venv 
 
-RUN pip install flask pandas flask-cors numpy matplotlib
+RUN pip install flask pandas flask-cors numpy matplotlib gunicorn
 
 COPY . .
 
-EXPOSE 5000
-
-CMD ["python", "WSGI.py"]
+CMD gunicorn --bind 0.0.0.0:5000 wsgi:app

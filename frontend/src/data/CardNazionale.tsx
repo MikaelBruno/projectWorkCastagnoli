@@ -8,7 +8,7 @@ import { CardChartProps } from "../models/CardChartProps"
     "Stato generale cantieri": {
       title: "Stato generale cantieri fibra ottica e FWA in Italia",
       littleTable: true,
-      url: "http://127.0.0.1:5000/construction-site/italy",
+      url: "http://app:5000/construction-site/italy",
       text:
         "Il primo grafico rappresenta lo stato dei cantieri relativi alla fibra ottica nel corso degli anni, suddivisi tra in esecuzione, in progettazione e completati. Il secondo grafico segue lo stesso principio, ma focalizzato sulla tecnologia FWA wireless ultraveloce.",
       firstChartAllowedType : ["bar chart", "line"],
@@ -17,7 +17,7 @@ import { CardChartProps } from "../models/CardChartProps"
     "Copertura": {
       title: "Copertura fibra ottica e FWA in Italia",
       littleTable: false,
-      url: "http://127.0.0.1:5000/coverage/italy",
+      url: "http://app:5000/coverage/italy",
       text: "In questo punto dal primo grafico a torta possiamo vedere la presenza delle due tecnologie a livello nazionale, mentre nel secondo grafico abbiamo i cantieri chiusi o in fase finale di collaudo per regione",
       firstChartAllowedType : ["pie", "doughnut"],
       secondChartAllowedType : ["bar chart", "line"],
@@ -26,7 +26,7 @@ import { CardChartProps } from "../models/CardChartProps"
     "Futuro dei cantieri": {
       title: "Cantieri aperti e programmati per regione",
       littleTable: false,
-      url: "http://127.0.0.1:5000/future-construction-site/italy",
+      url: "http://app:5000/future-construction-site/italy",
       text: "Da questi grafici possiamo vedere come finora i cantieri hanno riguardato maggiormenti alcune regioni rispetto ad altre",
       firstChartAllowedType : ["bar chart", "line"],
       secondChartAllowedType : ["bar chart", "line"],
@@ -36,7 +36,7 @@ import { CardChartProps } from "../models/CardChartProps"
     "Fwa vs Fibra": {
       title: "Andamento della fibra contro quello del FWA",
       littleTable: false,
-      url: "http://127.0.0.1:5000/fwa-vs-fibra/italy",
+      url: "http://app:5000/fwa-vs-fibra/italy",
       text: "Ultimo punto in cui controlliamo l'andamento della fibra e Fwa negli anni invece che per regione, notando un notevole incremento nel 2022 per la FWA. Nell'ultima tabella possiamo vedere di quanto i cantieri FWA superano i Cantieri con Fibra ottica",
       firstChartAllowedType : ["bar chart", "line"],
       secondChartAllowedType : ["bar chart", "line"]

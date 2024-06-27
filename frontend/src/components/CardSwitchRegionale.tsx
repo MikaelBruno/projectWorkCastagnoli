@@ -16,7 +16,6 @@ export default function CardSwitchRegionale(props: {
     const handleItemClick = (item:string) => {
         setSelected(item);
         callBack(item);
-        console.log(item)
     };
 
     return (

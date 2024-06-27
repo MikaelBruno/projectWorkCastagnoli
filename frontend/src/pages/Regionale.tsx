@@ -24,13 +24,11 @@ export default function Nazionale() {
     
     const handleRegionChange = (value: string) => {
         setRegion(value);
-        console.log(value)
         const newCardChartProps: CardChartProps = {
             ...getCardRegionale(slide), 
             region: value
         };
         setCardChartProps(newCardChartProps);
-        console.log(newCardChartProps)
     } 
 
     useEffect(() => {

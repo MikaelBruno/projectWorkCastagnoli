@@ -83,9 +83,7 @@ export default function CardChartRegionale(props: {
         axios.get(urlRegion).then(response => {
             if (response.status === 200) {
                 const data = response.data;
-                console.log(data)
                 const keys = Object.keys(data)
-                console.log(keys)
                 setDataFisrtChart(jsonToDatasetForBarChart(data[keys[0]]));
                 setLoading(false);
                 if (littleTable) {

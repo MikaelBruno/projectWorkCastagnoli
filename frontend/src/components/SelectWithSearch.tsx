@@ -16,7 +16,6 @@ const SelectWithSearch: React.FC<Props> = ({ options, onOptionSelect, selected }
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null); // Riferimento al nodo del dropdown
 
-  console.log("mi ridisegno")
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };

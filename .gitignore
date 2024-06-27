@@ -4,3 +4,4 @@ Lib/
 *.log
 frontend/node_modules
 venv/
+docker/frontend/node_modules

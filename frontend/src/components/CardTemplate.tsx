@@ -27,7 +27,7 @@ export default function CardTemplate (
     const yearOfFiber = ["Tutti","2019","2020","2021","2022","2023"]
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/comparison/${firstRegion}/${secondRegion}/${yearFiber}/Stato Fibra`).then(response => {
+        axios.get(`http://localhost:80/api/comparison/${firstRegion}/${secondRegion}/${yearFiber}/Stato Fibra`).then(response => {
             if (response.status === 200) {
                 const data = response.data;
                 setDataFirstChart(jsonToBarChartDataset(data))

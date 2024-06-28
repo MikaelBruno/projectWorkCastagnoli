@@ -27,7 +27,7 @@ export default function CardTemplate (
     const yearOfFiber = ["Tutti","2019","2020","2021","2022","2023"]
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/comparison/${firstRegion}/${secondRegion}/${yearFiber}/Stato Fibra`).then(response => {
+        axios.get(`http://localhost:80/api/comparison/${firstRegion}/${secondRegion}/${yearFiber}/Stato Fibra`).then(response => {
             console.log("chiamo il porco di dio")
             if (response.status === 200) {
                 const data = response.data;
@@ -43,7 +43,7 @@ export default function CardTemplate (
     }, [firstRegion, secondRegion, yearFiber]);
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/comparison/${firstRegion}/${secondRegion}/${yearFwa}/Stato FWA`).then(response => {
+        axios.get(`http://localhost:80/api/comparison/${firstRegion}/${secondRegion}/${yearFwa}/Stato FWA`).then(response => {
             console.log("chiamo il porco di dio")
             if (response.status === 200) {
                 const data = response.data;
@@ -59,7 +59,7 @@ export default function CardTemplate (
     }, [firstRegion, secondRegion, yearFwa]);
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/comparison/${firstRegion}/${secondRegion}/pcn`).then(response => {
+        axios.get(`http://localhost:80/api/comparison/${firstRegion}/${secondRegion}/pcn`).then(response => {
             console.log("chiamo il porco di dio")
             if (response.status === 200) {
                 const data = response.data;

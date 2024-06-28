@@ -9,16 +9,12 @@ services:
       - ./backend:/app
     networks:
       - mynetwork
-    ports:
-      - "0:5000"
 
   frontend:
     build:
       context: ./frontend
     volumes:
       - ./frontend:/app
-    ports:
-      - "0:3000"
     networks:
       - mynetwork
 

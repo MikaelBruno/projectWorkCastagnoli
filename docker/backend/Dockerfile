@@ -4,10 +4,12 @@ WORKDIR /app
 
 COPY requirements.txt .
 
-RUN python -m venv venv 
+RUN python -m venv . 
 
-RUN pip install flask pandas flask-cors numpy matplotlib gunicorn
+RUN pip install -r requirements.txt
 
 COPY . .
+
+EXPOSE 5000
 
 CMD gunicorn --bind 0.0.0.0:5000 wsgi:app

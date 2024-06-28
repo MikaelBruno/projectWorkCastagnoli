@@ -16,7 +16,7 @@ str_prog = 'in programmazione|in progettazione' # In progettazione
 str_esec = 'in esecuzione' # In esecuzione
 str_term = 'terminato|lavori chiusi|in collaudo' # Terminato
 
-@app.route('/construction-site/italy', methods=['GET'])
+@app.route('/api/construction-site/italy', methods=['GET'])
 def get_construction_site_italy():
     terminatiFO = df[(df['Stato Fibra'].str.contains(str_term, na=False)) & (df['Fibra'] != 0)]['Piano fibra (anno)'].value_counts().sort_index() # sort index gli ordina cronologicamente
     in_esecuzioneFO = df[(df['Stato Fibra'].str.contains(str_esec, na=False)) & (df['Fibra'] != 0)]['Piano fibra (anno)'].value_counts().sort_index()
@@ -37,7 +37,7 @@ def get_construction_site_italy():
     return responde.to_json()
 
 
-@app.route('/coverage/italy', methods=['GET'])
+@app.route('/api/coverage/italy', methods=['GET'])
 def get_coverage_italy():
     c1_1 = df[(df['Fibra'] == 1) & (df['FWA'] == 1)].shape[0]
     c0_1 = df[(df['Fibra'] == 1) | (df['FWA'] == 1)].shape[0] - c1_1
@@ -58,7 +58,7 @@ def get_coverage_italy():
 
     return res
 
-@app.route('/future-construction-site/italy', methods=['GET'])
+@app.route('/api/future-construction-site/italy', methods=['GET'])
 def get_future_construction_site_italy():
     open_fibra_cablata = df[df['Fibra'] == 1]['Regione'].value_counts().to_dict()
     open_fwa = df[df['FWA'] == 1]['Regione'].value_counts().to_dict()
@@ -74,7 +74,7 @@ def get_future_construction_site_italy():
 
     return res
 
-@app.route('/fwa-vs-fibra/italy', methods=['GET'])
+@app.route('/api/fwa-vs-fibra/italy', methods=['GET'])
 def get_fwa_vs_fibra_italy():
     valori_fibra = df[(df['Fibra'] == 1) & (df['Piano fibra (anno)'] != 0)]['Piano fibra (anno)'].value_counts().sort_index().to_dict()
     valori_fwa = df[(df['FWA'] == 1) & (df['Piano FWA (anno)'] != 0)]['Piano FWA (anno)'].value_counts().sort_index().to_dict()
@@ -112,7 +112,7 @@ def get_fwa_vs_fibra_italy():
     
     return res
 
-@app.route('/fwa-construction-site/<region>/<year>', methods=['GET'])
+@app.route('/api/fwa-construction-site/<region>/<year>', methods=['GET'])
 def get_fwa_construction_site_region(region:str,year:str):
     df_region = df[df['Regione'] == region]
     
@@ -133,7 +133,7 @@ def get_fwa_construction_site_region(region:str,year:str):
     
     return res
 
-@app.route('/fiber-construction-site/<region>/<year>', methods=['GET'])
+@app.route('/api/fiber-construction-site/<region>/<year>', methods=['GET'])
 def get_fiber_construction_site_region(region:str,year:str):
     df_region = df[df['Regione'] == region]
     
@@ -154,7 +154,7 @@ def get_fiber_construction_site_region(region:str,year:str):
     
     return res
 
-@app.route('/pcn/<region>/Tutti', methods = ["GET"])
+@app.route('/api/pcn/<region>/Tutti', methods = ["GET"])
 def get_pcn_by_region(region:str):
     df_region = df_pcn[df_pcn['Regione'] == region]
     pcn_by_province = df_region["Provincia"].value_counts().sort_index().fillna(0).to_dict()
@@ -184,7 +184,7 @@ def get_fiber_data(df, region, year, str_term, str_esec, str_prog, technology):
         "in progettazione": in_progettazione
     }
 
-@app.route('/comparison/<region1>/<region2>/<year>/<technology>', methods=["GET"])
+@app.route('/api/comparison/<region1>/<region2>/<year>/<technology>', methods=["GET"])
 def get_fiber_construction_site_of_two_regions(region1: str, region2: str, year: str, technology:str):
     data_region1 = get_fiber_data(df, region1, year, str_term, str_esec, str_prog, technology)
     data_region2 = get_fiber_data(df, region2, year, str_term, str_esec, str_prog, technology)
@@ -195,7 +195,7 @@ def get_fiber_construction_site_of_two_regions(region1: str, region2: str, year:
     })   
     
     
-@app.route('/comparison/<region1>/<region2>/pcn', methods=["GET"])
+@app.route('/api/comparison/<region1>/<region2>/pcn', methods=["GET"])
 def get_pcn_site_of_two_region(region1: str, region2: str):  
     pcn_count_region1 = df_pcn[df_pcn['Regione'] == region1]['Regione'].value_counts().to_dict()
     pcn_count_region2 = df_pcn[df_pcn['Regione'] == region2]['Regione'].value_counts().to_dict()

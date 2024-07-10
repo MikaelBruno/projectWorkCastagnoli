@@ -80,7 +80,7 @@ export default function CardChart(props: {
 
     useEffect(() => {
         axios.get(url).then(response => {
-            console.log("chiamo il porco di dio")
+            
             if (response.status === 200) {
                 const data = response.data;
                 const keys = Object.keys(data)

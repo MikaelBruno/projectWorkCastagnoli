@@ -28,7 +28,7 @@ export default function CardTemplate (
 
     useEffect(() => {
         axios.get(`http://localhost:80/api/comparison/${firstRegion}/${secondRegion}/${yearFiber}/Stato Fibra`).then(response => {
-            console.log("chiamo il porco di dio")
+            
             if (response.status === 200) {
                 const data = response.data;
                 setDataFirstChart(jsonToBarChartDataset(data))
@@ -44,7 +44,7 @@ export default function CardTemplate (
 
     useEffect(() => {
         axios.get(`http://localhost:80/api/comparison/${firstRegion}/${secondRegion}/${yearFwa}/Stato FWA`).then(response => {
-            console.log("chiamo il porco di dio")
+            
             if (response.status === 200) {
                 const data = response.data;
                 setDataSecondChart(jsonToBarChartDataset(data))
@@ -60,7 +60,7 @@ export default function CardTemplate (
 
     useEffect(() => {
         axios.get(`http://localhost:80/api/comparison/${firstRegion}/${secondRegion}/pcn`).then(response => {
-            console.log("chiamo il porco di dio")
+            
             if (response.status === 200) {
                 const data = response.data;
                 setDataThirdChart(jsonToBarChartDataset(data))

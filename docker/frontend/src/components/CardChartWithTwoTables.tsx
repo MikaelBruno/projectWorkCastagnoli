@@ -61,7 +61,6 @@ export default function CardChartWithTwoTables(props: {
             }
         }
     }
-    console.log("dio porcone")
     const cardChartProps = props.cardChartProps;
     const { title, text, url, firstChartAllowedType, firstChartallowMoreHeight, } = cardChartProps;
     const [dataFisrtChart, setDataFisrtChart] = useState<any>({});
@@ -73,7 +72,7 @@ export default function CardChartWithTwoTables(props: {
 
     useEffect(() => {
         axios.get(url).then(response => {
-            console.log("chiamo il porco di dio")
+            
             if (response.status === 200) {
                 const data = response.data;
                 const keys = Object.keys(data)
@@ -93,7 +92,6 @@ export default function CardChartWithTwoTables(props: {
     }, [url]);
 
     useEffect(() => {
-        console.log("mi ridisegno dio cane")
         handleChangeChartType(firstChartAllowedType[1])
     }, [dataFisrtChart,loading])
 
